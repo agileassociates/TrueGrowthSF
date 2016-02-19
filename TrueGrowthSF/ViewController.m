@@ -24,4 +24,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)signinClicked:(id)sender {
+    [self performSegueWithIdentifier:@"login_success" sender:self];
+
+    
+    
+}
+
+- (IBAction)backgroundTapped:(id)sender {
+    [self.view endEditing:YES];
+}
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
 @end
