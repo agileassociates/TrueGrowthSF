@@ -49,6 +49,7 @@
     
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     
+    
     NSString *email = _emailTextField.text;
     NSString *password = _passwordTextField.text;
     
@@ -57,12 +58,23 @@
     params[@"email"] = email;
     params[@"password"] = password;
     
-    [manager POST:@"https://127.0.0.1:9292/api/sessions" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+    [manager POST:@"https://localhost:9292/api/sessions" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         
         if ( responseObject[@"errors"] == NULL){
         
         
-        NSLog(@"%@", responseObject[@"data"][@"attributes"][@"auth_token"]);
+        //NSLog(@"%@", responseObject[@"data"][@"attributes"][@"auth_token"]);
+            NSLog(@"%@", responseObject);
+            
+            if ([responseObject isKindOfClass:[NSArray class]]) {          // i used this to find out responseobj type!!
+                
+                NSLog(@"Array");
+                
+            } else if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                
+                NSLog(@"Dictionary");
+                
+            };
         
         [self performSegueWithIdentifier:@"login_success" sender:self];
             
@@ -102,6 +114,7 @@
     
     
 }
+
 
 - (IBAction)backgroundTapped:(id)sender {
     [self.view endEditing:YES];
