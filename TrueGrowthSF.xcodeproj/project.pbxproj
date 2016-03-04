@@ -26,6 +26,7 @@
 		29756F8C1C76A23600ED8928 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 29756F811C76A23600ED8928 /* UIProgressView+AFNetworking.m */; };
 		29756F8D1C76A23600ED8928 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 29756F831C76A23600ED8928 /* UIRefreshControl+AFNetworking.m */; };
 		29756F8E1C76A23600ED8928 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 29756F851C76A23600ED8928 /* UIWebView+AFNetworking.m */; };
+		298B39B51C8A4DEF006C1C40 /* PhotoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B39B41C8A4DEF006C1C40 /* PhotoHeaderView.m */; };
 		29A160171C768E04004BF934 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A160161C768E04004BF934 /* main.m */; };
 		29A1601A1C768E04004BF934 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A160191C768E04004BF934 /* AppDelegate.m */; };
 		29A1601D1C768E04004BF934 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A1601C1C768E04004BF934 /* ViewController.m */; };
@@ -75,6 +76,8 @@
 		29756F831C76A23600ED8928 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		29756F841C76A23600ED8928 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		29756F851C76A23600ED8928 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		298B39B31C8A4DEF006C1C40 /* PhotoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoHeaderView.h; sourceTree = "<group>"; };
+		298B39B41C8A4DEF006C1C40 /* PhotoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoHeaderView.m; sourceTree = "<group>"; };
 		29A160121C768E04004BF934 /* TrueGrowthSF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueGrowthSF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A160161C768E04004BF934 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29A160181C768E04004BF934 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 				29756F5D1C76A22A00ED8928 /* AFNetworking */,
 				29A160181C768E04004BF934 /* AppDelegate.h */,
 				291C7CA31C85716500D0FE02 /* Main.storyboard */,
+				298B39B31C8A4DEF006C1C40 /* PhotoHeaderView.h */,
+				298B39B41C8A4DEF006C1C40 /* PhotoHeaderView.m */,
 				291C7CA61C8572EB00D0FE02 /* CollectionViewController.h */,
 				291C7CA71C8572EB00D0FE02 /* CollectionViewController.m */,
 				29A160191C768E04004BF934 /* AppDelegate.m */,
@@ -276,6 +281,7 @@
 				29756F6B1C76A22A00ED8928 /* AFHTTPSessionManager.m in Sources */,
 				29756F701C76A22A00ED8928 /* AFURLSessionManager.m in Sources */,
 				29756F891C76A23600ED8928 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				298B39B51C8A4DEF006C1C40 /* PhotoHeaderView.m in Sources */,
 				29A1601A1C768E04004BF934 /* AppDelegate.m in Sources */,
 				29756F8C1C76A23600ED8928 /* UIProgressView+AFNetworking.m in Sources */,
 				29756F6C1C76A22A00ED8928 /* AFNetworkReachabilityManager.m in Sources */,

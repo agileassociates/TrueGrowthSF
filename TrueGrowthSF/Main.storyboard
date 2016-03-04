@@ -85,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="-482" y="233"/>
         </scene>
-        <!--Item-->
+        <!--News Feed-->
         <scene sceneID="nCt-gA-bdz">
             <objects>
                 <collectionViewController id="0vO-5G-tZQ" customClass="CollectionViewController" sceneMemberID="viewController">
@@ -96,13 +96,13 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Cft-UQ-IWo">
                             <size key="itemSize" width="284" height="201"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="48"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="11" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="DeK-r7-MSx">
-                                <rect key="frame" x="18" y="18" width="284" height="201"/>
+                                <rect key="frame" x="18" y="59" width="284" height="201"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="284" height="201"/>
@@ -115,7 +115,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9MY-B5-k5m">
+                                        <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9MY-B5-k5m">
                                             <rect key="frame" x="22" y="53" width="240" height="128"/>
                                             <animations/>
                                         </imageView>
@@ -126,17 +126,37 @@
                                 <animations/>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoHeaderView" id="jLz-mm-cBM" customClass="PhotoHeaderView">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Use-sH-Qpa">
+                                    <rect key="frame" x="0.0" y="2" width="320" height="44"/>
+                                    <animations/>
+                                    <items>
+                                        <barButtonItem style="plain" systemItem="camera" id="Z68-ty-kCf">
+                                            <connections>
+                                                <action selector="cameraClicked:" destination="jLz-mm-cBM" id="tb9-ZF-T69"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </items>
+                                </toolbar>
+                            </subviews>
+                            <animations/>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="0vO-5G-tZQ" id="nhh-3D-wbg"/>
                             <outlet property="delegate" destination="0vO-5G-tZQ" id="JbF-Bo-zg1"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="GyA-rR-xBP"/>
+                    <tabBarItem key="tabBarItem" title="News Feed" image="newsfeed-48.png" id="GyA-rR-xBP"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZV-7E-vMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="814" y="-90"/>
+            <point key="canvasLocation" x="795" y="-87"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="2YM-K1-ADt">
@@ -180,4 +200,7 @@
             <point key="canvasLocation" x="279" y="215"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="newsfeed-48.png" width="48" height="48"/>
+    </resources>
 </document>

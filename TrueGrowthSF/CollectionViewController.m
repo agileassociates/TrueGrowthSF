@@ -8,6 +8,7 @@
 
 #import "CollectionViewController.h"
 #import "UIKit+AFNetworking.h"
+#import "PhotoHeaderView.h"
 
 
 
@@ -20,23 +21,24 @@
 
 
 
-
-
 - (void)viewDidLoad{
     
     [super viewDidLoad];
     
+    
     self.urlArray = [NSMutableArray arrayWithObjects: @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/tech_chavis.jpeg", @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/messi.jpeg", @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/fruit_apple.jpg", @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/lebronking.jpg",  nil];
-    
-
-
-
-    
     
 }
 
 
 #pragma mark <UICollectionViewDataSource>
+
+- (UICollectionReusableView *)collectionView: (UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    PhotoHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:
+                                         UICollectionElementKindSectionHeader withReuseIdentifier:@"PhotoHeaderView" forIndexPath:indexPath];
+    return headerView;
+}
+
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
@@ -73,11 +75,9 @@
                                          [cell setNeedsLayout];
                                  });
                              }
-                             });
+        });
     
-    
-    
-    return cell;
+        return cell;
 }
     
 
