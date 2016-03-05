@@ -14,9 +14,32 @@
 
 @implementation CameraView
 
-- (void)viewDidAppear:(BOOL)animated {
-    //[super viewDidLoad];
+- (void)viewDidLoad{
+    [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    }
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    // Get picked image from info dictionary
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    
+    // Put that image onto the screen in our image view
+    self.pictureView.image = image;
+    
+    // Take image picker off the screen -
+    // you must call this dismiss method
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (IBAction)addPhotoClicked:(id)sender {
+    
     UIImagePickerController *imagePicker =
     [[UIImagePickerController alloc] init];
     
@@ -31,12 +54,10 @@
     
     imagePicker.delegate = self;
     [self presentViewController:imagePicker animated:YES completion:NULL];
+    
 
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)uploadPhotoClicked:(id)sender {
 }
-
 @end

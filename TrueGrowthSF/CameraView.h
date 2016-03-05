@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface CameraView : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *pictureView;
 
+- (IBAction)addPhotoClicked:(id)sender;
+- (IBAction)uploadPhotoClicked:(id)sender;
 
 @end

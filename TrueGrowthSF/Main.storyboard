@@ -170,10 +170,42 @@
                     <view key="view" contentMode="scaleToFill" id="QFE-eD-FXE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SZz-y8-1LN">
+                                <rect key="frame" x="20" y="56" width="280" height="262"/>
+                                <animations/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BH0-hd-Msp">
+                                <rect key="frame" x="20" y="357" width="280" height="59"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.09803922474" green="0.68235296010000002" blue="0.94901967050000002" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Add Photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addPhotoClicked:" destination="THg-J5-2K5" eventType="touchUpInside" id="d0f-D2-FAO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ooe-g8-3xq">
+                                <rect key="frame" x="20" y="433" width="280" height="59"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.91985493898391724" green="0.59988820552825928" blue="0.71783000230789185" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Upload Photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addPhotoClicked:" destination="THg-J5-2K5" eventType="touchUpInside" id="FxD-em-aGx"/>
+                                    <action selector="uploadPhotoClicked:" destination="THg-J5-2K5" eventType="touchUpInside" id="pza-k7-sfa"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="pictureView" destination="SZz-y8-1LN" id="Zhv-Gb-Zce"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lc3-WA-OMy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
