@@ -33,6 +33,7 @@
 		29A160231C768E04004BF934 /* TrueGrowthSF.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29A160211C768E04004BF934 /* TrueGrowthSF.xcdatamodeld */; };
 		29A160251C768E04004BF934 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29A160241C768E04004BF934 /* Assets.xcassets */; };
 		29A160281C768E04004BF934 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A160261C768E04004BF934 /* LaunchScreen.storyboard */; };
+		29C0295B1C8ADE1900B07C0C /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C0295A1C8ADE1900B07C0C /* CameraView.m */; };
 		29C2B4DC1C856987005378CD /* FUTURITY.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29C2B4DB1C856987005378CD /* FUTURITY.jpg */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,8 @@
 		29A160241C768E04004BF934 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29A160271C768E04004BF934 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29A160291C768E04004BF934 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29C029591C8ADE1900B07C0C /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
+		29C0295A1C8ADE1900B07C0C /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
 		29C2B4DB1C856987005378CD /* FUTURITY.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FUTURITY.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,6 +178,8 @@
 				29756F5D1C76A22A00ED8928 /* AFNetworking */,
 				29A160181C768E04004BF934 /* AppDelegate.h */,
 				291C7CA31C85716500D0FE02 /* Main.storyboard */,
+				29C029591C8ADE1900B07C0C /* CameraView.h */,
+				29C0295A1C8ADE1900B07C0C /* CameraView.m */,
 				298B39B31C8A4DEF006C1C40 /* PhotoHeaderView.h */,
 				298B39B41C8A4DEF006C1C40 /* PhotoHeaderView.m */,
 				291C7CA61C8572EB00D0FE02 /* CollectionViewController.h */,
@@ -273,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C0295B1C8ADE1900B07C0C /* CameraView.m in Sources */,
 				29756F6D1C76A22A00ED8928 /* AFSecurityPolicy.m in Sources */,
 				291C7CA81C8572EB00D0FE02 /* CollectionViewController.m in Sources */,
 				29756F6F1C76A22A00ED8928 /* AFURLResponseSerialization.m in Sources */,

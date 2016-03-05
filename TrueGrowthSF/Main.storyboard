@@ -136,7 +136,8 @@
                                     <items>
                                         <barButtonItem style="plain" systemItem="camera" id="Z68-ty-kCf">
                                             <connections>
-                                                <action selector="cameraClicked:" destination="jLz-mm-cBM" id="tb9-ZF-T69"/>
+                                                <action selector="cameraClicked:" destination="jLz-mm-cBM" id="pYK-fB-byc"/>
+                                                <segue destination="THg-J5-2K5" kind="presentation" id="Seu-XM-Kdp"/>
                                             </connections>
                                         </barButtonItem>
                                     </items>
@@ -156,7 +157,27 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZV-7E-vMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="795" y="-87"/>
+            <point key="canvasLocation" x="687" y="-619"/>
+        </scene>
+        <!--Camera View-->
+        <scene sceneID="eBm-hH-hgz">
+            <objects>
+                <viewController id="THg-J5-2K5" customClass="CameraView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5oS-bu-CJx"/>
+                        <viewControllerLayoutGuide type="bottom" id="LgD-Bo-wFy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QFE-eD-FXE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lc3-WA-OMy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1284" y="-619"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="2YM-K1-ADt">
@@ -177,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvo-Nd-7fT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="814" y="561"/>
+            <point key="canvasLocation" x="874" y="1373"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DZg-aK-9dQ">
@@ -197,7 +218,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSM-k9-cWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="279" y="215"/>
+            <point key="canvasLocation" x="39" y="233"/>
         </scene>
     </scenes>
     <resources>

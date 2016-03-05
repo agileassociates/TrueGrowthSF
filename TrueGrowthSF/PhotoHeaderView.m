@@ -7,8 +7,10 @@
 //
 
 #import "PhotoHeaderView.h"
+#import <UIKit/UIKit.h>
 
-@interface PhotoHeaderView ()
+@interface PhotoHeaderView () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
 
 @end
 
@@ -18,6 +20,7 @@
 
 
 - (IBAction)cameraClicked:(id)sender {
+    
 }
 @end
 
