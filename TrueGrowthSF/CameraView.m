@@ -7,6 +7,10 @@
 //
 
 #import "CameraView.h"
+#import "AFNetworking.h"
+#import <AWSS3/AWSS3TransferManager.h>
+#import <AWSS3/AWSS3.h>
+#import <AWSCore/AWSCore.h>
 
 @interface CameraView () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -59,5 +63,53 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 }
 
 - (IBAction)uploadPhotoClicked:(id)sender {
-}
+    NSUUID *uuid = [[NSUUID alloc] init];
+    NSString *key = [uuid UUIDString];
+    UIImage *image = self.pictureView.image;
+    //NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
+    
+    //convert uiimage to
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"image.png"];
+    [UIImagePNGRepresentation(image) writeToFile:filePath atomically:YES];
+    
+    NSURL* fileUrl = [NSURL fileURLWithPath:filePath];
+    
+    AWSS3TransferManager *transferManager = [AWSS3TransferManager defaultS3TransferManager];
+    
+    AWSS3TransferManagerUploadRequest *uploadRequest = [AWSS3TransferManagerUploadRequest new];
+    uploadRequest.bucket = @"truegrowthsf";
+    uploadRequest.key = key;
+    uploadRequest.body = fileUrl;
+    
+    [[transferManager upload:uploadRequest] continueWithExecutor:[AWSExecutor mainThreadExecutor]
+                                                       withBlock:^id(AWSTask *task) {
+                                                           if (task.error) {
+                                                               if ([task.error.domain isEqualToString:AWSS3TransferManagerErrorDomain]) {
+                                                                   switch (task.error.code) {
+                                                                       case AWSS3TransferManagerErrorCancelled:
+                                                                       case AWSS3TransferManagerErrorPaused:
+                                                                           break;
+                                                                           
+                                                                       default:
+                                                                           NSLog(@"Error: %@", task.error);
+                                                                           break;
+                                                                   }
+                                                               } else {
+                                                                   // Unknown error.
+                                                                   NSLog(@"Error: %@", task.error);
+                                                               }
+                                                           }
+                                                           
+                                                           if (task.result) {
+                                                               AWSS3TransferManagerUploadOutput *uploadOutput = task.result;
+                                                               // The file uploaded successfully.
+                                                           }
+                                                           return nil;
+                                                       }];
+
+
+    
+    }
+
 @end

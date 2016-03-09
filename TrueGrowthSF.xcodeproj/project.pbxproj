@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29187B521C90295800B68C73 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 29187B511C90295800B68C73 /* libsqlite3.tbd */; };
+		29187B541C90297D00B68C73 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 29187B531C90297D00B68C73 /* libz.tbd */; };
+		29187B561C90298A00B68C73 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29187B551C90298A00B68C73 /* SystemConfiguration.framework */; };
+		29187B871C9039A900B68C73 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29187B861C9039A900B68C73 /* AWSCore.framework */; };
+		29187B891C903AD200B68C73 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29187B881C903AD200B68C73 /* AWSS3.framework */; };
 		291C7CA41C85716500D0FE02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 291C7CA31C85716500D0FE02 /* Main.storyboard */; };
 		291C7CA81C8572EB00D0FE02 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 291C7CA71C8572EB00D0FE02 /* CollectionViewController.m */; };
 		2947093E1C79844B00D2A495 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947093D1C79844B00D2A495 /* NSString+URLEncoding.m */; };
@@ -38,6 +43,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29187B511C90295800B68C73 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		29187B531C90297D00B68C73 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		29187B551C90298A00B68C73 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		29187B861C9039A900B68C73 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
+		29187B881C903AD200B68C73 /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSS3.framework; sourceTree = "<group>"; };
 		291C7CA31C85716500D0FE02 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		291C7CA61C8572EB00D0FE02 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		291C7CA71C8572EB00D0FE02 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
@@ -99,6 +109,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29187B561C90298A00B68C73 /* SystemConfiguration.framework in Frameworks */,
+				29187B871C9039A900B68C73 /* AWSCore.framework in Frameworks */,
+				29187B541C90297D00B68C73 /* libz.tbd in Frameworks */,
+				29187B521C90295800B68C73 /* libsqlite3.tbd in Frameworks */,
+				29187B891C903AD200B68C73 /* AWSS3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +171,9 @@
 		29A160091C768E04004BF934 = {
 			isa = PBXGroup;
 			children = (
+				29187B551C90298A00B68C73 /* SystemConfiguration.framework */,
+				29187B531C90297D00B68C73 /* libz.tbd */,
+				29187B511C90295800B68C73 /* libsqlite3.tbd */,
 				29A160141C768E04004BF934 /* TrueGrowthSF */,
 				29A160131C768E04004BF934 /* Products */,
 			);
@@ -181,8 +199,10 @@
 				29C029591C8ADE1900B07C0C /* CameraView.h */,
 				29C0295A1C8ADE1900B07C0C /* CameraView.m */,
 				298B39B31C8A4DEF006C1C40 /* PhotoHeaderView.h */,
+				29187B861C9039A900B68C73 /* AWSCore.framework */,
 				298B39B41C8A4DEF006C1C40 /* PhotoHeaderView.m */,
 				291C7CA61C8572EB00D0FE02 /* CollectionViewController.h */,
+				29187B881C903AD200B68C73 /* AWSS3.framework */,
 				291C7CA71C8572EB00D0FE02 /* CollectionViewController.m */,
 				29A160191C768E04004BF934 /* AppDelegate.m */,
 				29A1601B1C768E04004BF934 /* ViewController.h */,
@@ -402,8 +422,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TrueGrowthSF",
+				);
 				INFOPLIST_FILE = TrueGrowthSF/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TrueGrowthSF",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Agile-Associates.TrueGrowthSF";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -413,8 +441,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TrueGrowthSF",
+				);
 				INFOPLIST_FILE = TrueGrowthSF/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TrueGrowthSF",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Agile-Associates.TrueGrowthSF";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

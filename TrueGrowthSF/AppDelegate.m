@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <AWSCore/AWSCore.h>
 
 @interface AppDelegate ()
 
@@ -16,6 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    AWSStaticCredentialsProvider *credentialsProvider = [AWSStaticCredentialsProvider credentialsWithAccessKey:@"AKIAJGLGD4TEV6KTTIFQ" secretKey:@"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"];
+    AWSServiceConfiguration *configuration = [AWSServiceConfiguration configurationWithRegion:AWSRegionUSWest1 credentialsProvider:credentialsProvider];
+    [AWSServiceManager defaultServiceManager].defaultServiceConfiguration = configuration;
     // Override point for customization after application launch.
     return YES;
 }
