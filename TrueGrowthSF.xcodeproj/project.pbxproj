@@ -12,7 +12,6 @@
 		29187B561C90298A00B68C73 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29187B551C90298A00B68C73 /* SystemConfiguration.framework */; };
 		291C7CA41C85716500D0FE02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 291C7CA31C85716500D0FE02 /* Main.storyboard */; };
 		291C7CA81C8572EB00D0FE02 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 291C7CA71C8572EB00D0FE02 /* CollectionViewController.m */; };
-		2947093E1C79844B00D2A495 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947093D1C79844B00D2A495 /* NSString+URLEncoding.m */; };
 		296D18711C76F4900035FD12 /* newsfeed-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 296D18701C76F4900035FD12 /* newsfeed-48.png */; };
 		298B39B51C8A4DEF006C1C40 /* PhotoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B39B41C8A4DEF006C1C40 /* PhotoHeaderView.m */; };
 		29A160171C768E04004BF934 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A160161C768E04004BF934 /* main.m */; };
@@ -36,8 +35,6 @@
 		291C7CA31C85716500D0FE02 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		291C7CA61C8572EB00D0FE02 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		291C7CA71C8572EB00D0FE02 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
-		2947093C1C79844B00D2A495 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncoding.h"; path = "../NSString+URLEncoding.h"; sourceTree = "<group>"; };
-		2947093D1C79844B00D2A495 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+URLEncoding.m"; path = "../NSString+URLEncoding.m"; sourceTree = "<group>"; };
 		296D18701C76F4900035FD12 /* newsfeed-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newsfeed-48.png"; sourceTree = "<group>"; };
 		298B39B31C8A4DEF006C1C40 /* PhotoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoHeaderView.h; sourceTree = "<group>"; };
 		298B39B41C8A4DEF006C1C40 /* PhotoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoHeaderView.m; sourceTree = "<group>"; };
@@ -101,8 +98,6 @@
 		29A160141C768E04004BF934 /* TrueGrowthSF */ = {
 			isa = PBXGroup;
 			children = (
-				2947093C1C79844B00D2A495 /* NSString+URLEncoding.h */,
-				2947093D1C79844B00D2A495 /* NSString+URLEncoding.m */,
 				29A160181C768E04004BF934 /* AppDelegate.h */,
 				291C7CA31C85716500D0FE02 /* Main.storyboard */,
 				29C029591C8ADE1900B07C0C /* CameraView.h */,
@@ -282,7 +277,6 @@
 				298B39B51C8A4DEF006C1C40 /* PhotoHeaderView.m in Sources */,
 				29A1601A1C768E04004BF934 /* AppDelegate.m in Sources */,
 				29A160171C768E04004BF934 /* main.m in Sources */,
-				2947093E1C79844B00D2A495 /* NSString+URLEncoding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

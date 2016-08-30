@@ -1,5 +1,5 @@
 //
-//  NSString+NSString.h
+//  NSString+URLEncoding.h
 //  TrueGrowthSF
 //
 //  Created by elliott chavis on 2/20/16.

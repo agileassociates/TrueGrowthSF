@@ -21,6 +21,8 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+
     }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +43,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     // you must call this dismiss method
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
+
+
 
 - (IBAction)addPhotoClicked:(id)sender {
     
@@ -111,5 +115,10 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
     
     }
+
+- (IBAction)backButtonClicked:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+
+}
 
 @end

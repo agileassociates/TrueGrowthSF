@@ -59,7 +59,7 @@
     params[@"email"] = email;
     params[@"password"] = password;
     
-    [manager POST:@"https://localhost:9292/api/sessions" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+    [manager POST:@"https://true-growth-api.herokuapp.com/api/sessions" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         
         if ( responseObject[@"errors"] == NULL){
         

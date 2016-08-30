@@ -10,4 +10,7 @@
 
 @interface CollectionViewController : UICollectionViewController
 @property (nonatomic, strong) NSMutableArray *urlArray;
+-(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue;
+
+
 @end

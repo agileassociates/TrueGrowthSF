@@ -13,5 +13,6 @@
 
 - (IBAction)addPhotoClicked:(id)sender;
 - (IBAction)uploadPhotoClicked:(id)sender;
+- (IBAction)backButtonClicked:(id)sender;
 
 @end
