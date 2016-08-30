@@ -25,6 +25,9 @@
 		9514743E48CE8A3E9AF960EA /* libPods-TrueGrowthSF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1CB3022DE7AFEC6FB327983 /* libPods-TrueGrowthSF.a */; };
 		F4DB29301D7538F90052D6AC /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB292F1D7538F90052D6AC /* AWSCore.framework */; };
 		F4DB29321D7539070052D6AC /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB29311D7539070052D6AC /* AWSS3.framework */; };
+		F4DB293A1D7608A30052D6AC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB29391D7608A30052D6AC /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		F4DB293C1D7608CC0052D6AC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB293B1D7608CC0052D6AC /* FBSDKCoreKit.framework */; };
+		F4DB293E1D760BD40052D6AC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB293D1D760BD40052D6AC /* Bolts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +58,9 @@
 		A1CB3022DE7AFEC6FB327983 /* libPods-TrueGrowthSF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrueGrowthSF.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DB292F1D7538F90052D6AC /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
 		F4DB29311D7539070052D6AC /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSS3.framework; sourceTree = "<group>"; };
+		F4DB29391D7608A30052D6AC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		F4DB293B1D7608CC0052D6AC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		F4DB293D1D760BD40052D6AC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,9 @@
 				F4DB29301D7538F90052D6AC /* AWSCore.framework in Frameworks */,
 				29187B541C90297D00B68C73 /* libz.tbd in Frameworks */,
 				29187B521C90295800B68C73 /* libsqlite3.tbd in Frameworks */,
+				F4DB293A1D7608A30052D6AC /* FBSDKLoginKit.framework in Frameworks */,
+				F4DB293C1D7608CC0052D6AC /* FBSDKCoreKit.framework in Frameworks */,
+				F4DB293E1D760BD40052D6AC /* Bolts.framework in Frameworks */,
 				F4DB29321D7539070052D6AC /* AWSS3.framework in Frameworks */,
 				9514743E48CE8A3E9AF960EA /* libPods-TrueGrowthSF.a in Frameworks */,
 			);
@@ -110,8 +119,11 @@
 				29A1601B1C768E04004BF934 /* ViewController.h */,
 				29A1601C1C768E04004BF934 /* ViewController.m */,
 				29A160241C768E04004BF934 /* Assets.xcassets */,
-				29C2B4DB1C856987005378CD /* FUTURITY.jpg */,
 				296D18701C76F4900035FD12 /* newsfeed-48.png */,
+				29C2B4DB1C856987005378CD /* FUTURITY.jpg */,
+				F4DB293D1D760BD40052D6AC /* Bolts.framework */,
+				F4DB293B1D7608CC0052D6AC /* FBSDKCoreKit.framework */,
+				F4DB29391D7608A30052D6AC /* FBSDKLoginKit.framework */,
 				F4DB292F1D7538F90052D6AC /* AWSCore.framework */,
 				F4DB29311D7539070052D6AC /* AWSS3.framework */,
 				29A160261C768E04004BF934 /* LaunchScreen.storyboard */,

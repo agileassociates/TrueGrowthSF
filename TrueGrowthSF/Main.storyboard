@@ -164,7 +164,7 @@
                                 <rect key="frame" x="20" y="56" width="280" height="262"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BH0-hd-Msp">
-                                <rect key="frame" x="20" y="357" width="280" height="59"/>
+                                <rect key="frame" x="20" y="341" width="280" height="59"/>
                                 <color key="backgroundColor" red="0.09803922474" green="0.68235296010000002" blue="0.94901967050000002" alpha="1" colorSpace="deviceRGB"/>
                                 <state key="normal" title="Add Photo">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -174,7 +174,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ooe-g8-3xq">
-                                <rect key="frame" x="20" y="433" width="280" height="59"/>
+                                <rect key="frame" x="20" y="418" width="280" height="59"/>
                                 <color key="backgroundColor" red="0.91985493898391724" green="0.59988820552825928" blue="0.71783000230789185" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Upload Photo">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -184,7 +184,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4K-jK-0GF">
-                                <rect key="frame" x="20" y="506" width="280" height="54"/>
+                                <rect key="frame" x="20" y="499" width="280" height="54"/>
                                 <color key="backgroundColor" red="0.047622235630000002" green="0.84369081440000004" blue="0.20921483830000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Cancel"/>

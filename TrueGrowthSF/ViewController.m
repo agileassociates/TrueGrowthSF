@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "AFNetworking.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 
 @interface ViewController ()
@@ -19,6 +21,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+    
+    //loginButton.center = self.view.center;
+    
+    loginButton.frame = CGRectMake(20, 310, 280, 37);
+
+    
+    [self.view addSubview:loginButton];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    if ([FBSDKAccessToken currentAccessToken]) {
+        // User is logged in, do work such as go to next view controller.
+        [self performSegueWithIdentifier:@"login_success" sender:self];
+        
+    }
+    
+    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+         
+         if (!error) {
+             NSLog(@"fetched user:%@  and Email : %@", result,result[@"email"]);
+         }
+     }];
 }
 
 - (void)didReceiveMemoryWarning {
