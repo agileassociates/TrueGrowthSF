@@ -180,7 +180,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="uploadPhotoClicked:" destination="THg-J5-2K5" eventType="touchUpInside" id="pza-k7-sfa"/>
+                                    <action selector="uploadPhotoClicked:" destination="THg-J5-2K5" eventType="touchUpInside" id="iu6-FQ-Bvs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4K-jK-0GF">

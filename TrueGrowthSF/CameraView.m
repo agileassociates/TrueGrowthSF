@@ -111,6 +111,9 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
                                                            }
                                                            return nil;
                                                        }];
+    
+    [AWSLogger defaultLogger].logLevel = AWSLogLevelVerbose;
+
 
 
     

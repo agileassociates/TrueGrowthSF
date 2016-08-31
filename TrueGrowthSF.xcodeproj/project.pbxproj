@@ -23,8 +23,6 @@
 		29C0295B1C8ADE1900B07C0C /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C0295A1C8ADE1900B07C0C /* CameraView.m */; };
 		29C2B4DC1C856987005378CD /* FUTURITY.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29C2B4DB1C856987005378CD /* FUTURITY.jpg */; };
 		9514743E48CE8A3E9AF960EA /* libPods-TrueGrowthSF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1CB3022DE7AFEC6FB327983 /* libPods-TrueGrowthSF.a */; };
-		F4DB29301D7538F90052D6AC /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB292F1D7538F90052D6AC /* AWSCore.framework */; };
-		F4DB29321D7539070052D6AC /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB29311D7539070052D6AC /* AWSS3.framework */; };
 		F4DB293A1D7608A30052D6AC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB29391D7608A30052D6AC /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		F4DB293C1D7608CC0052D6AC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB293B1D7608CC0052D6AC /* FBSDKCoreKit.framework */; };
 		F4DB293E1D760BD40052D6AC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB293D1D760BD40052D6AC /* Bolts.framework */; };
@@ -56,8 +54,6 @@
 		29C2B4DB1C856987005378CD /* FUTURITY.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FUTURITY.jpg; sourceTree = "<group>"; };
 		7647B379F1771FA2CB96B6DF /* Pods-TrueGrowthSF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueGrowthSF.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrueGrowthSF/Pods-TrueGrowthSF.release.xcconfig"; sourceTree = "<group>"; };
 		A1CB3022DE7AFEC6FB327983 /* libPods-TrueGrowthSF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrueGrowthSF.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4DB292F1D7538F90052D6AC /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
-		F4DB29311D7539070052D6AC /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSS3.framework; sourceTree = "<group>"; };
 		F4DB29391D7608A30052D6AC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		F4DB293B1D7608CC0052D6AC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		F4DB293D1D760BD40052D6AC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -69,13 +65,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				29187B561C90298A00B68C73 /* SystemConfiguration.framework in Frameworks */,
-				F4DB29301D7538F90052D6AC /* AWSCore.framework in Frameworks */,
 				29187B541C90297D00B68C73 /* libz.tbd in Frameworks */,
 				29187B521C90295800B68C73 /* libsqlite3.tbd in Frameworks */,
 				F4DB293A1D7608A30052D6AC /* FBSDKLoginKit.framework in Frameworks */,
 				F4DB293C1D7608CC0052D6AC /* FBSDKCoreKit.framework in Frameworks */,
 				F4DB293E1D760BD40052D6AC /* Bolts.framework in Frameworks */,
-				F4DB29321D7539070052D6AC /* AWSS3.framework in Frameworks */,
 				9514743E48CE8A3E9AF960EA /* libPods-TrueGrowthSF.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,11 +118,9 @@
 				F4DB293D1D760BD40052D6AC /* Bolts.framework */,
 				F4DB293B1D7608CC0052D6AC /* FBSDKCoreKit.framework */,
 				F4DB29391D7608A30052D6AC /* FBSDKLoginKit.framework */,
-				F4DB292F1D7538F90052D6AC /* AWSCore.framework */,
-				F4DB29311D7539070052D6AC /* AWSS3.framework */,
+				29A160211C768E04004BF934 /* TrueGrowthSF.xcdatamodeld */,
 				29A160261C768E04004BF934 /* LaunchScreen.storyboard */,
 				29A160291C768E04004BF934 /* Info.plist */,
-				29A160211C768E04004BF934 /* TrueGrowthSF.xcdatamodeld */,
 				29A160151C768E04004BF934 /* Supporting Files */,
 			);
 			path = TrueGrowthSF;
@@ -395,6 +387,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/TrueGrowthSF",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/AWSCore\"",
+					"\"${PODS_ROOT}/AWSS3\"",
+				);
 				INFOPLIST_FILE = TrueGrowthSF/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -414,6 +413,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TrueGrowthSF",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/AWSCore\"",
+					"\"${PODS_ROOT}/AWSS3\"",
 				);
 				INFOPLIST_FILE = TrueGrowthSF/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
