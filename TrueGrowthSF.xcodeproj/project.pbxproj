@@ -23,6 +23,9 @@
 		29C0295B1C8ADE1900B07C0C /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C0295A1C8ADE1900B07C0C /* CameraView.m */; };
 		29C2B4DC1C856987005378CD /* FUTURITY.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29C2B4DB1C856987005378CD /* FUTURITY.jpg */; };
 		9514743E48CE8A3E9AF960EA /* libPods-TrueGrowthSF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1CB3022DE7AFEC6FB327983 /* libPods-TrueGrowthSF.a */; };
+		F4BCB4431D7E2A8F00A665B8 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BCB4421D7E2A8F00A665B8 /* AssetsLibrary.framework */; };
+		F4BCB4451D7E388200A665B8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BCB4441D7E388200A665B8 /* CoreData.framework */; };
+		F4BCB4481D7E38C700A665B8 /* TrueGrowthSF.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4BCB4461D7E38C700A665B8 /* TrueGrowthSF.xcdatamodeld */; };
 		F4DB293A1D7608A30052D6AC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB29391D7608A30052D6AC /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		F4DB293C1D7608CC0052D6AC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB293B1D7608CC0052D6AC /* FBSDKCoreKit.framework */; };
 		F4DB293E1D760BD40052D6AC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB293D1D760BD40052D6AC /* Bolts.framework */; };
@@ -54,6 +57,9 @@
 		29C2B4DB1C856987005378CD /* FUTURITY.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FUTURITY.jpg; sourceTree = "<group>"; };
 		7647B379F1771FA2CB96B6DF /* Pods-TrueGrowthSF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueGrowthSF.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrueGrowthSF/Pods-TrueGrowthSF.release.xcconfig"; sourceTree = "<group>"; };
 		A1CB3022DE7AFEC6FB327983 /* libPods-TrueGrowthSF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrueGrowthSF.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4BCB4421D7E2A8F00A665B8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		F4BCB4441D7E388200A665B8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F4BCB4471D7E38C700A665B8 /* TrueGrowthSF.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrueGrowthSF.xcdatamodel; sourceTree = "<group>"; };
 		F4DB29391D7608A30052D6AC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		F4DB293B1D7608CC0052D6AC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		F4DB293D1D760BD40052D6AC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -64,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4BCB4451D7E388200A665B8 /* CoreData.framework in Frameworks */,
+				F4BCB4431D7E2A8F00A665B8 /* AssetsLibrary.framework in Frameworks */,
 				29187B561C90298A00B68C73 /* SystemConfiguration.framework in Frameworks */,
 				29187B541C90297D00B68C73 /* libz.tbd in Frameworks */,
 				29187B521C90295800B68C73 /* libsqlite3.tbd in Frameworks */,
@@ -80,6 +88,7 @@
 		29A160091C768E04004BF934 = {
 			isa = PBXGroup;
 			children = (
+				F4BCB4461D7E38C700A665B8 /* TrueGrowthSF.xcdatamodeld */,
 				29187B551C90298A00B68C73 /* SystemConfiguration.framework */,
 				29187B531C90297D00B68C73 /* libz.tbd */,
 				29187B511C90295800B68C73 /* libsqlite3.tbd */,
@@ -146,6 +155,8 @@
 		9BEA912192FE0B6343B4B826 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4BCB4441D7E388200A665B8 /* CoreData.framework */,
+				F4BCB4421D7E2A8F00A665B8 /* AssetsLibrary.framework */,
 				A1CB3022DE7AFEC6FB327983 /* libPods-TrueGrowthSF.a */,
 			);
 			name = Frameworks;
@@ -279,6 +290,7 @@
 				29A1601D1C768E04004BF934 /* ViewController.m in Sources */,
 				29A160231C768E04004BF934 /* TrueGrowthSF.xcdatamodeld in Sources */,
 				298B39B51C8A4DEF006C1C40 /* PhotoHeaderView.m in Sources */,
+				F4BCB4481D7E38C700A665B8 /* TrueGrowthSF.xcdatamodeld in Sources */,
 				29A1601A1C768E04004BF934 /* AppDelegate.m in Sources */,
 				29A160171C768E04004BF934 /* main.m in Sources */,
 			);
@@ -462,6 +474,16 @@
 				29A160221C768E04004BF934 /* TrueGrowthSF.xcdatamodel */,
 			);
 			currentVersion = 29A160221C768E04004BF934 /* TrueGrowthSF.xcdatamodel */;
+			path = TrueGrowthSF.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		F4BCB4461D7E38C700A665B8 /* TrueGrowthSF.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F4BCB4471D7E38C700A665B8 /* TrueGrowthSF.xcdatamodel */,
+			);
+			currentVersion = F4BCB4471D7E38C700A665B8 /* TrueGrowthSF.xcdatamodel */;
 			path = TrueGrowthSF.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
