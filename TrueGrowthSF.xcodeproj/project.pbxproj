@@ -60,6 +60,7 @@
 		F4BCB4421D7E2A8F00A665B8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		F4BCB4441D7E388200A665B8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F4BCB4471D7E38C700A665B8 /* TrueGrowthSF.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrueGrowthSF.xcdatamodel; sourceTree = "<group>"; };
+		F4BCB4491D828AF700A665B8 /* TrueGrowthSF 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TrueGrowthSF 2.xcdatamodel"; sourceTree = "<group>"; };
 		F4DB29391D7608A30052D6AC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		F4DB293B1D7608CC0052D6AC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		F4DB293D1D760BD40052D6AC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -481,9 +482,10 @@
 		F4BCB4461D7E38C700A665B8 /* TrueGrowthSF.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				F4BCB4491D828AF700A665B8 /* TrueGrowthSF 2.xcdatamodel */,
 				F4BCB4471D7E38C700A665B8 /* TrueGrowthSF.xcdatamodel */,
 			);
-			currentVersion = F4BCB4471D7E38C700A665B8 /* TrueGrowthSF.xcdatamodel */;
+			currentVersion = F4BCB4491D828AF700A665B8 /* TrueGrowthSF 2.xcdatamodel */;
 			path = TrueGrowthSF.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

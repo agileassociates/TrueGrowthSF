@@ -32,6 +32,38 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark NSURLConnection Delegate Methods
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    // A response has been received, this is where we initialize the instance var you created
+    // so that we can append data to it in the didReceiveData method
+    // Furthermore, this method is called each time there is a redirect so reinitializing it
+    // also serves to clear it
+    _responseData = [[NSMutableData alloc] init];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    // Append the new data to the instance variable you declared
+    [_responseData appendData:data];
+}
+
+- (NSCachedURLResponse *)connection:(NSURLConnection *)connection
+                  willCacheResponse:(NSCachedURLResponse*)cachedResponse {
+    // Return nil to indicate not necessary to store a cached response for this connection
+    return nil;
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    // The request is complete and data has been received
+    // You can parse the stuff in your instance variable now
+    
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    // The request has failed for some reason!
+    // Check the error var
+}
+
 - (NSManagedObjectContext *)managedObjectContext {
     NSManagedObjectContext *context = nil;
     id delegate = [[UIApplication sharedApplication] delegate];
@@ -127,7 +159,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     
     // Fetch photoname from CoreData
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"UploadedPhoto" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
@@ -142,11 +173,16 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         NSLog(@"%@", result);
     }
     
+    
+    
+    
+    // set param variables
     NSManagedObject *photo = (NSManagedObject *)[result objectAtIndex:0];
     NSString *photoName = [photo valueForKey:@"name"];
     NSLog(@"%@", photoName);
-
     
+    NSString *user_id = @"1";
+    NSString *url_suffix = photoName;
     
     // Upload to AWS
     AWSS3TransferManager *transferManager = [AWSS3TransferManager defaultS3TransferManager];
@@ -178,12 +214,70 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
                                                            if (task.result) {
                                                                AWSS3TransferManagerUploadOutput *uploadOutput = task.result;
                                                                // The file uploaded successfully.
+                                                               
+                                                               AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+                                                               
+                                                               AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+                                                               policy.allowInvalidCertificates = YES;
+                                                               manager.securityPolicy = policy;
+                                                               
+                                                               manager.requestSerializer = [AFJSONRequestSerializer serializer];
+                                                               
+                                                               [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+                                                               
+                                                               
+                                                               
+                                                               NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+                                                               params[@"user_id"] = user_id;
+                                                               params[@"url"] = url_suffix;
+                                                               
+                                                               [manager POST:@"https://true-growth-api.herokuapp.com/api/photos" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+                                                                   
+                                                                   if ( responseObject[@"errors"] == NULL){
+                                                                       
+                                                                       
+                                                                       //NSLog(@"%@", responseObject[@"data"][@"attributes"][@"auth_token"]);
+                                                                       NSLog(@"%@", responseObject);
+                                                                       
+                                                                   } else {
+                                                                       
+                                                                       UIAlertController * alert=   [UIAlertController
+                                                                                                     alertControllerWithTitle:@"Info"
+                                                                                                     message:responseObject[@"errors"]
+                                                                                                     preferredStyle:UIAlertControllerStyleAlert];
+                                                                       UIAlertAction* ok = [UIAlertAction
+                                                                                            actionWithTitle:@"OK"
+                                                                                            style:UIAlertActionStyleDefault
+                                                                                            handler:^(UIAlertAction * action)
+                                                                                            {
+                                                                                                [alert dismissViewControllerAnimated:YES completion:nil];
+                                                                                                
+                                                                                            }];
+                                                                       
+                                                                       [alert addAction:ok];
+                                                                       
+                                                                       [self presentViewController:alert animated:YES completion:nil];
+                                                                       
+                                                                       NSLog(@"JSON: %@", responseObject[@"errors"]);
+                                                                       
+                                                                       
+                                                                   }
+                                                                   
+                                                                   
+                                                                   
+                                                               } failure:^(NSURLSessionTask *operation, NSError *error) {
+                                                                   
+                                                                   NSLog(@"error = %@", error);
+                                                                   
+                                                               }];
+                                                               
+                                                               
+
                                                            }
                                                            return nil;
                                                        }];
     
     [AWSLogger defaultLogger].logLevel = AWSLogLevelVerbose;
-
 
 
     

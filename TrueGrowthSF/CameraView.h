@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CameraView : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface CameraView : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, NSURLConnectionDelegate>
+{
+    NSMutableData *_responseData;
+}
+
 @property (weak, nonatomic) IBOutlet UIImageView *pictureView;
 
 - (IBAction)addPhotoClicked:(id)sender;
