@@ -57,6 +57,7 @@
 		29C2B4DB1C856987005378CD /* FUTURITY.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FUTURITY.jpg; sourceTree = "<group>"; };
 		7647B379F1771FA2CB96B6DF /* Pods-TrueGrowthSF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueGrowthSF.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrueGrowthSF/Pods-TrueGrowthSF.release.xcconfig"; sourceTree = "<group>"; };
 		A1CB3022DE7AFEC6FB327983 /* libPods-TrueGrowthSF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrueGrowthSF.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F44EA3821D852D0B00748C39 /* TrueGrowthSF 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TrueGrowthSF 3.xcdatamodel"; sourceTree = "<group>"; };
 		F4BCB4421D7E2A8F00A665B8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		F4BCB4441D7E388200A665B8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F4BCB4471D7E38C700A665B8 /* TrueGrowthSF.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrueGrowthSF.xcdatamodel; sourceTree = "<group>"; };
@@ -482,10 +483,11 @@
 		F4BCB4461D7E38C700A665B8 /* TrueGrowthSF.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				F44EA3821D852D0B00748C39 /* TrueGrowthSF 3.xcdatamodel */,
 				F4BCB4491D828AF700A665B8 /* TrueGrowthSF 2.xcdatamodel */,
 				F4BCB4471D7E38C700A665B8 /* TrueGrowthSF.xcdatamodel */,
 			);
-			currentVersion = F4BCB4491D828AF700A665B8 /* TrueGrowthSF 2.xcdatamodel */;
+			currentVersion = F44EA3821D852D0B00748C39 /* TrueGrowthSF 3.xcdatamodel */;
 			path = TrueGrowthSF.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

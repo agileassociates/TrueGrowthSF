@@ -12,6 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (nonatomic, strong) NSMutableArray *photoUrlArray;
+
+
 - (IBAction)signinClicked:(id)sender;
 - (IBAction)backgroundTapped:(id)sender;
 

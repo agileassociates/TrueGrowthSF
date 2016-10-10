@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface CollectionViewController : UICollectionViewController
+    
 @property (nonatomic, strong) NSMutableArray *urlArray;
+
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue;
 
 

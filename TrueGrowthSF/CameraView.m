@@ -157,7 +157,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     
     
     
-    // Fetch photoname from CoreData
+    // Fetch entity from CoreData
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"UploadedPhoto" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
@@ -191,6 +191,9 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     uploadRequest.bucket = @"truegrowthsf/photos";
     uploadRequest.key = photoName;
     uploadRequest.body = fileUrl;
+    uploadRequest.contentType = @"image/jpeg";
+    uploadRequest.ACL = AWSS3BucketCannedACLPublicRead;
+
     
     [[transferManager upload:uploadRequest] continueWithExecutor:[AWSExecutor mainThreadExecutor]
                                                        withBlock:^id(AWSTask *task) {
