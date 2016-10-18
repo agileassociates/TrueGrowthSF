@@ -121,8 +121,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 - (IBAction)addPhotoClicked:(id)sender {
     
-    UIImagePickerController *imagePicker =
-    [[UIImagePickerController alloc] init];
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     
     // If the device has a camera, take a picture, otherwise,
     // just pick from photo library
@@ -140,8 +139,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 }
 
 - (IBAction)uploadPhotoClicked:(id)sender {
-   // NSUUID *uuid = [[NSUUID alloc] init];
-   // NSString *key = [uuid UUIDString];
+    NSUUID *uuid = [[NSUUID alloc] init];
+    NSString *key = [uuid UUIDString];
     
     
     UIImage *image = self.pictureView.image;
@@ -157,7 +156,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     
     
     
-    // Fetch photoname from CoreData
+    // Fetch entity from CoreData
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"UploadedPhoto" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
@@ -177,20 +176,24 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     
     
     // set param variables
-    NSManagedObject *photo = (NSManagedObject *)[result objectAtIndex:0];
-    NSString *photoName = [photo valueForKey:@"name"];
-    NSLog(@"%@", photoName);
+    //NSManagedObject *photo = (NSManagedObject *)[result objectAtIndex:0];
+    //NSString *photoName = [photo valueForKey:@"name"];
+    //NSLog(@"%@", photoName);
     
-    NSString *user_id = @"1";
-    NSString *url_suffix = photoName;
+    NSString *user_id = [[NSUserDefaults standardUserDefaults]
+                         stringForKey:@"userId"];
+    NSString *url_suffix = key;
     
     // Upload to AWS
     AWSS3TransferManager *transferManager = [AWSS3TransferManager defaultS3TransferManager];
     
     AWSS3TransferManagerUploadRequest *uploadRequest = [AWSS3TransferManagerUploadRequest new];
     uploadRequest.bucket = @"truegrowthsf/photos";
-    uploadRequest.key = photoName;
+    uploadRequest.key = key;
     uploadRequest.body = fileUrl;
+    uploadRequest.contentType = @"image/jpeg";
+    uploadRequest.ACL = AWSS3BucketCannedACLPublicRead;
+
     
     [[transferManager upload:uploadRequest] continueWithExecutor:[AWSExecutor mainThreadExecutor]
                                                        withBlock:^id(AWSTask *task) {

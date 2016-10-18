@@ -10,6 +10,9 @@
 #import "AFNetworking.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+#import <CoreData/CoreData.h>
+
 
 
 @interface ViewController ()
@@ -18,8 +21,12 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@"Documents Directory: %@", [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject]);
+
     // Do any additional setup after loading the view, typically from a nib.
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
     
@@ -30,13 +37,26 @@
     
     [self.view addSubview:loginButton];
     
+    }
+
+- (NSManagedObjectContext *)managedObjectContext {
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
 }
+
+
+
 
 - (void)viewDidAppear:(BOOL)animated {
     
-    if ([FBSDKAccessToken currentAccessToken]) {
+   
+       if ([FBSDKAccessToken currentAccessToken]) {
         // User is logged in, do work such as go to next view controller.
-        [self performSegueWithIdentifier:@"login_success" sender:self];
+        [self performSegueWithIdentifier:@"login_success" sender    :self];
         
     }
     
@@ -104,6 +124,20 @@
                 NSLog(@"Dictionary");
                 
             };
+            
+            NSString *user_id = responseObject[@"data"][@"id"];
+            NSLog(@" user id is %@", user_id);
+            [[NSUserDefaults standardUserDefaults] setObject:user_id forKey:@"userId"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            NSString *user_profile = responseObject[@"data"][@"attributes"][@"user_profile"];
+            NSLog(@" user profile is %@", user_profile);
+            [[NSUserDefaults standardUserDefaults] setObject:user_id forKey:@"userProfile"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+
+            
+            
+            
         
         [self performSegueWithIdentifier:@"login_success" sender:self];
             
