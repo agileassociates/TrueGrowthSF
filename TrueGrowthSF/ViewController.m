@@ -124,6 +124,20 @@
                 NSLog(@"Dictionary");
                 
             };
+            
+            NSString *user_id = responseObject[@"data"][@"id"];
+            NSLog(@" user id is %@", user_id);
+            [[NSUserDefaults standardUserDefaults] setObject:user_id forKey:@"userId"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            NSString *user_profile = responseObject[@"data"][@"user_profile"];
+            NSLog(@" user profile is %@", user_profile);
+            [[NSUserDefaults standardUserDefaults] setObject:user_id forKey:@"userProfile"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+
+            
+            
+            
         
         [self performSegueWithIdentifier:@"login_success" sender:self];
             

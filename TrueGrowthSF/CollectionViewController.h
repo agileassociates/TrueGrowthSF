@@ -11,6 +11,8 @@
 @interface CollectionViewController : UICollectionViewController
     
 @property (nonatomic, strong) NSMutableArray *urlArray;
+@property (nonatomic, strong) NSMutableArray *userArray;
+
 
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue;
 

@@ -27,9 +27,10 @@
     
     [super viewDidLoad];
     
-  //  self.urlArray = [NSMutableArray arrayWithObjects: @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/tech_chavis.jpeg", @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/messi.jpeg", @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/fruit_apple.jpg", @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/lebronking.jpg",  nil];
+  //  self.urlArray = [NSMutableArray arrayWithObjects: @"https://s3-us-west-1.amazonaws.com/truegrowthsf/profiles/tech_chavis.jpeg", @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/messi.jpeg", @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/fruit_apple.jpg", @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/lebronking.jpg",  nil];
     
     _urlArray = [[NSMutableArray alloc] init];
+    _userArray = [[NSMutableArray alloc] init];
     
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -76,12 +77,17 @@
         int i = 0;
         for(i=0;i<j;i++){
             
-            NSMutableArray *urlArray = [[NSMutableArray alloc] init];
-            [_urlArray addObject:responseObject[@"data"][i][@"attributes"][@"url"]];
-            NSString *url = [urlArray componentsJoinedByString:@"\n"];
-            
+            //NSMutableArray *urlArray = [[NSMutableArray alloc] init];
+            //NSString *url = [urlArray componentsJoinedByString:@"\n"];
             // ... which is then inserted into core data
-            [photoURL setValue:url forKey:@"photo_name"];
+            //[photoURL setValue:url forKey:@"photo_name"];
+
+
+            
+            
+            [_urlArray addObject:responseObject[@"data"][i][@"attributes"][@"url"]];
+            [_userArray addObject:responseObject[@"data"][i][@"attributes"][@"user_name"]];
+            
             
             NSError *error = nil;
             if (![context save:&error]) {
@@ -99,13 +105,10 @@
         
     
         NSLog(@"urlArray: %@", _urlArray);
+        NSLog(@"userArray: %@", _userArray);
+        
+       [self.collectionView reloadData];
 
-        
-        [self.collectionView reloadData];
-
-        
-        
-        
         
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         
@@ -115,13 +118,12 @@
     
     //_urlArray = [NSMutableArray arrayWithObjects: @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/tech_chavis.jpeg", @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/messi.jpeg", @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/fruit_apple.jpg", @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/lebronking.jpg",  nil];
 
-    
 
 
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    [self.collectionView reloadData];
+        //[self.collectionView reloadData];
     
 }
 
@@ -140,9 +142,9 @@
 #pragma mark <UICollectionViewDataSource>
 
 - (UICollectionReusableView *)collectionView: (UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    PhotoHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:
-                                         UICollectionElementKindSectionHeader withReuseIdentifier:@"PhotoHeaderView" forIndexPath:indexPath];
-    return headerView;
+    PhotoHeaderView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:
+                                         UICollectionElementKindSectionFooter withReuseIdentifier:@"PhotoHeaderView" forIndexPath:indexPath];
+    return footerView;
 }
 
 
@@ -159,8 +161,15 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     
-    //UILabel *label = (UILabel *)[cell viewWithTag:100];
+    UILabel *label = (UILabel *)[cell viewWithTag:100];
+    label.text = _userArray[indexPath.row];
+    
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:200];
+    
+    UIImageView *userProfile = (UIImageView *)[cell viewWithTag:300];
+    userProfile.layer.cornerRadius = userProfile.frame.size.height /2;
+    userProfile.layer.masksToBounds = YES;
+    userProfile.layer.borderWidth = 0;
     
     
     //imageView.image = [UIImage imageNamed:@"FUTURITY.jpg"];
@@ -170,16 +179,19 @@
     
     // Configure the cell
     
+    
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
     dispatch_async(queue, ^(void) {
         
-        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:_urlArray[indexPath.row]]];
+       
         
+        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:_urlArray[indexPath.row]]];
                              UIImage* image = [[UIImage alloc] initWithData:imageData];
                              if (image) {
                                  dispatch_async(dispatch_get_main_queue(), ^{
+
                                          imageView.image = image;
-                                         [cell setNeedsLayout];
+                                         [cell setNeedsDisplay];
                                  });
                              }
         });
@@ -189,9 +201,9 @@
 }
 
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
-}
+    }
 
-    
+
 
 
 
