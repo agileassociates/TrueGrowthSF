@@ -31,6 +31,7 @@
     
     _urlArray = [[NSMutableArray alloc] init];
     _userArray = [[NSMutableArray alloc] init];
+    _userProfileArray = [[NSMutableArray alloc] init];
     
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -87,6 +88,9 @@
             
             [_urlArray addObject:responseObject[@"data"][i][@"attributes"][@"url"]];
             [_userArray addObject:responseObject[@"data"][i][@"attributes"][@"user_name"]];
+            [_userProfileArray addObject:responseObject[@"data"][i][@"attributes"][@"user_profile"]];
+
+            
             
             
             NSError *error = nil;
@@ -106,6 +110,7 @@
     
         NSLog(@"urlArray: %@", _urlArray);
         NSLog(@"userArray: %@", _userArray);
+        NSLog(@"userProfileArray: %@", _userProfileArray);
         
        [self.collectionView reloadData];
 
@@ -116,7 +121,7 @@
         
     }];
     
-    //_urlArray = [NSMutableArray arrayWithObjects: @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/tech_chavis.jpeg", @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/messi.jpeg", @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/fruit_apple.jpg", @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/lebronking.jpg",  nil];
+    //_urlArray = [NSMutableArray arrayWithObjects: @"https://s3-us-west-1.amazonaws.com/truegrowthsf/profiles/tech_chavis.jpeg", @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/messi.jpeg", @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/fruit_apple.jpg", @"https://s3-us-west-1.amazonaws.com/truegrowthsf/photos/lebronking.jpg",  nil];
 
 
 
@@ -172,6 +177,10 @@
     userProfile.layer.borderWidth = 0;
     
     
+
+
+    
+    
     //imageView.image = [UIImage imageNamed:@"FUTURITY.jpg"];
     
     
@@ -181,7 +190,7 @@
     
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
-    dispatch_async(queue, ^(void) {
+    dispatch_async(queue, ^ (void) {
         
        
         
@@ -194,11 +203,33 @@
                                          [cell setNeedsDisplay];
                                  });
                              }
-        });
+    });
 
     
-        return cell;
+    
+
+
+    dispatch_async(queue, ^ {
+    
+    
+    
+        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:_userProfileArray[indexPath.row]]];
+        UIImage* image = [[UIImage alloc] initWithData:imageData];
+        if (image) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+            
+                userProfile.image = image;
+                [cell setNeedsDisplay];
+            });
+        }
+    });
+
+
+return cell;
 }
+
+
+
 
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
     }

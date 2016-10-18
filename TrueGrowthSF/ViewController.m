@@ -130,7 +130,7 @@
             [[NSUserDefaults standardUserDefaults] setObject:user_id forKey:@"userId"];
             [[NSUserDefaults standardUserDefaults] synchronize];
             
-            NSString *user_profile = responseObject[@"data"][@"user_profile"];
+            NSString *user_profile = responseObject[@"data"][@"attributes"][@"user_profile"];
             NSLog(@" user profile is %@", user_profile);
             [[NSUserDefaults standardUserDefaults] setObject:user_id forKey:@"userProfile"];
             [[NSUserDefaults standardUserDefaults] synchronize];

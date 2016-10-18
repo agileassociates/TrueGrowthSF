@@ -12,6 +12,8 @@
     
 @property (nonatomic, strong) NSMutableArray *urlArray;
 @property (nonatomic, strong) NSMutableArray *userArray;
+@property (nonatomic, strong) NSMutableArray *userProfileArray;
+
 
 
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue;
