@@ -22,6 +22,7 @@
 		29C0295B1C8ADE1900B07C0C /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C0295A1C8ADE1900B07C0C /* CameraView.m */; };
 		29C2B4DC1C856987005378CD /* FUTURITY.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29C2B4DB1C856987005378CD /* FUTURITY.jpg */; };
 		9514743E48CE8A3E9AF960EA /* libPods-TrueGrowthSF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1CB3022DE7AFEC6FB327983 /* libPods-TrueGrowthSF.a */; };
+		F44F0FEB1DB5E5A9000195C5 /* CameraButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = F44F0FEA1DB5E5A9000195C5 /* CameraButtonView.m */; };
 		F495B71C1DAF30EE00A11ACF /* SanFranciscoDisplay-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F495B7071DAF30ED00A11ACF /* SanFranciscoDisplay-Black.otf */; };
 		F495B71D1DAF30EE00A11ACF /* SanFranciscoDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F495B7081DAF30ED00A11ACF /* SanFranciscoDisplay-Bold.otf */; };
 		F495B71E1DAF30EE00A11ACF /* SanFranciscoDisplay-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = F495B7091DAF30ED00A11ACF /* SanFranciscoDisplay-Heavy.otf */; };
@@ -43,6 +44,7 @@
 		F495B72E1DAF30EE00A11ACF /* SanFranciscoText-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F495B7191DAF30EE00A11ACF /* SanFranciscoText-RegularItalic.otf */; };
 		F495B72F1DAF30EE00A11ACF /* SanFranciscoText-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F495B71A1DAF30EE00A11ACF /* SanFranciscoText-Semibold.otf */; };
 		F495B7301DAF30EE00A11ACF /* SanFranciscoText-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F495B71B1DAF30EE00A11ACF /* SanFranciscoText-SemiboldItalic.otf */; };
+		F495B76F1DB5D28800A11ACF /* NewCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = F495B76E1DB5D28800A11ACF /* NewCameraView.m */; };
 		F4BCB4431D7E2A8F00A665B8 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BCB4421D7E2A8F00A665B8 /* AssetsLibrary.framework */; };
 		F4BCB4451D7E388200A665B8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BCB4441D7E388200A665B8 /* CoreData.framework */; };
 		F4BCB4481D7E38C700A665B8 /* TrueGrowthSF.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4BCB4461D7E38C700A665B8 /* TrueGrowthSF.xcdatamodeld */; };
@@ -78,6 +80,8 @@
 		7647B379F1771FA2CB96B6DF /* Pods-TrueGrowthSF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueGrowthSF.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrueGrowthSF/Pods-TrueGrowthSF.release.xcconfig"; sourceTree = "<group>"; };
 		A1CB3022DE7AFEC6FB327983 /* libPods-TrueGrowthSF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrueGrowthSF.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44EA3821D852D0B00748C39 /* TrueGrowthSF 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TrueGrowthSF 3.xcdatamodel"; sourceTree = "<group>"; };
+		F44F0FE91DB5E5A9000195C5 /* CameraButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraButtonView.h; sourceTree = "<group>"; };
+		F44F0FEA1DB5E5A9000195C5 /* CameraButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraButtonView.m; sourceTree = "<group>"; };
 		F495B7071DAF30ED00A11ACF /* SanFranciscoDisplay-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Black.otf"; sourceTree = "<group>"; };
 		F495B7081DAF30ED00A11ACF /* SanFranciscoDisplay-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Bold.otf"; sourceTree = "<group>"; };
 		F495B7091DAF30ED00A11ACF /* SanFranciscoDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Heavy.otf"; sourceTree = "<group>"; };
@@ -99,6 +103,38 @@
 		F495B7191DAF30EE00A11ACF /* SanFranciscoText-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-RegularItalic.otf"; sourceTree = "<group>"; };
 		F495B71A1DAF30EE00A11ACF /* SanFranciscoText-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Semibold.otf"; sourceTree = "<group>"; };
 		F495B71B1DAF30EE00A11ACF /* SanFranciscoText-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		F495B76D1DB5D28800A11ACF /* NewCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCameraView.h; sourceTree = "<group>"; };
+		F495B76E1DB5D28800A11ACF /* NewCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCameraView.m; sourceTree = "<group>"; };
+		F495B7711DB5D4D400A11ACF /* AsyncButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
+		F495B7721DB5D4D400A11ACF /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		F495B7731DB5D4D400A11ACF /* AutoTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
+		F495B7741DB5D4D400A11ACF /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		F495B7751DB5D4D400A11ACF /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
+		F495B7761DB5D4D400A11ACF /* DesignableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
+		F495B7771DB5D4D400A11ACF /* DesignableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableLabel.swift; sourceTree = "<group>"; };
+		F495B7781DB5D4D400A11ACF /* DesignableTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTabBarController.swift; sourceTree = "<group>"; };
+		F495B7791DB5D4D400A11ACF /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
+		F495B77A1DB5D4D400A11ACF /* DesignableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextView.swift; sourceTree = "<group>"; };
+		F495B77B1DB5D4D400A11ACF /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		F495B77C1DB5D4D400A11ACF /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		F495B77D1DB5D4D400A11ACF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F495B77E1DB5D4D400A11ACF /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
+		F495B77F1DB5D4D400A11ACF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		F495B7801DB5D4D400A11ACF /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		F495B7811DB5D4D400A11ACF /* Misc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
+		F495B7821DB5D4D400A11ACF /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		F495B7831DB5D4D400A11ACF /* Spring.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spring.h; sourceTree = "<group>"; };
+		F495B7841DB5D4D400A11ACF /* Spring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
+		F495B7851DB5D4D400A11ACF /* SpringAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		F495B7861DB5D4D400A11ACF /* SpringButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringButton.swift; sourceTree = "<group>"; };
+		F495B7871DB5D4D400A11ACF /* SpringImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringImageView.swift; sourceTree = "<group>"; };
+		F495B7881DB5D4D400A11ACF /* SpringLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringLabel.swift; sourceTree = "<group>"; };
+		F495B7891DB5D4D400A11ACF /* SpringTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringTextField.swift; sourceTree = "<group>"; };
+		F495B78A1DB5D4D400A11ACF /* SpringTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringTextView.swift; sourceTree = "<group>"; };
+		F495B78B1DB5D4D400A11ACF /* SpringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
+		F495B78C1DB5D4D400A11ACF /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		F495B78D1DB5D4D400A11ACF /* TransitionZoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
+		F495B78E1DB5D4D400A11ACF /* UnwindSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		F4BCB4421D7E2A8F00A665B8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		F4BCB4441D7E388200A665B8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F4BCB4471D7E38C700A665B8 /* TrueGrowthSF.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrueGrowthSF.xcdatamodel; sourceTree = "<group>"; };
@@ -175,15 +211,19 @@
 		29A160141C768E04004BF934 /* TrueGrowthSF */ = {
 			isa = PBXGroup;
 			children = (
+				F4DF8F9D1DAD7B9C00783ED7 /* Main.storyboard */,
+				29A160191C768E04004BF934 /* AppDelegate.m */,
 				29A160181C768E04004BF934 /* AppDelegate.h */,
 				29C0295A1C8ADE1900B07C0C /* CameraView.m */,
 				29C029591C8ADE1900B07C0C /* CameraView.h */,
-				F4DF8F9D1DAD7B9C00783ED7 /* Main.storyboard */,
+				F44F0FE91DB5E5A9000195C5 /* CameraButtonView.h */,
+				F44F0FEA1DB5E5A9000195C5 /* CameraButtonView.m */,
 				298B39B41C8A4DEF006C1C40 /* PhotoHeaderView.m */,
 				298B39B31C8A4DEF006C1C40 /* PhotoHeaderView.h */,
+				F495B76D1DB5D28800A11ACF /* NewCameraView.h */,
+				F495B76E1DB5D28800A11ACF /* NewCameraView.m */,
 				291C7CA61C8572EB00D0FE02 /* CollectionViewController.h */,
 				291C7CA71C8572EB00D0FE02 /* CollectionViewController.m */,
-				29A160191C768E04004BF934 /* AppDelegate.m */,
 				29A1601B1C768E04004BF934 /* ViewController.h */,
 				29A1601C1C768E04004BF934 /* ViewController.m */,
 				29A160241C768E04004BF934 /* Assets.xcassets */,
@@ -220,11 +260,50 @@
 		9BEA912192FE0B6343B4B826 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F495B7701DB5D4D400A11ACF /* Spring */,
 				F4BCB4441D7E388200A665B8 /* CoreData.framework */,
 				F4BCB4421D7E2A8F00A665B8 /* AssetsLibrary.framework */,
 				A1CB3022DE7AFEC6FB327983 /* libPods-TrueGrowthSF.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F495B7701DB5D4D400A11ACF /* Spring */ = {
+			isa = PBXGroup;
+			children = (
+				F495B7711DB5D4D400A11ACF /* AsyncButton.swift */,
+				F495B7721DB5D4D400A11ACF /* AsyncImageView.swift */,
+				F495B7731DB5D4D400A11ACF /* AutoTextView.swift */,
+				F495B7741DB5D4D400A11ACF /* BlurView.swift */,
+				F495B7751DB5D4D400A11ACF /* DesignableButton.swift */,
+				F495B7761DB5D4D400A11ACF /* DesignableImageView.swift */,
+				F495B7771DB5D4D400A11ACF /* DesignableLabel.swift */,
+				F495B7781DB5D4D400A11ACF /* DesignableTabBarController.swift */,
+				F495B7791DB5D4D400A11ACF /* DesignableTextField.swift */,
+				F495B77A1DB5D4D400A11ACF /* DesignableTextView.swift */,
+				F495B77B1DB5D4D400A11ACF /* DesignableView.swift */,
+				F495B77C1DB5D4D400A11ACF /* ImageLoader.swift */,
+				F495B77D1DB5D4D400A11ACF /* Info.plist */,
+				F495B77E1DB5D4D400A11ACF /* KeyboardLayoutConstraint.swift */,
+				F495B77F1DB5D4D400A11ACF /* LoadingView.swift */,
+				F495B7801DB5D4D400A11ACF /* LoadingView.xib */,
+				F495B7811DB5D4D400A11ACF /* Misc.swift */,
+				F495B7821DB5D4D400A11ACF /* SoundPlayer.swift */,
+				F495B7831DB5D4D400A11ACF /* Spring.h */,
+				F495B7841DB5D4D400A11ACF /* Spring.swift */,
+				F495B7851DB5D4D400A11ACF /* SpringAnimation.swift */,
+				F495B7861DB5D4D400A11ACF /* SpringButton.swift */,
+				F495B7871DB5D4D400A11ACF /* SpringImageView.swift */,
+				F495B7881DB5D4D400A11ACF /* SpringLabel.swift */,
+				F495B7891DB5D4D400A11ACF /* SpringTextField.swift */,
+				F495B78A1DB5D4D400A11ACF /* SpringTextView.swift */,
+				F495B78B1DB5D4D400A11ACF /* SpringView.swift */,
+				F495B78C1DB5D4D400A11ACF /* TransitionManager.swift */,
+				F495B78D1DB5D4D400A11ACF /* TransitionZoom.swift */,
+				F495B78E1DB5D4D400A11ACF /* UnwindSegue.swift */,
+			);
+			name = Spring;
+			path = TrueGrowthSF/Spring;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +335,7 @@
 		29A1600A1C768E04004BF934 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Agile Associates";
 				TargetAttributes = {
@@ -373,8 +453,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				29C0295B1C8ADE1900B07C0C /* CameraView.m in Sources */,
+				F44F0FEB1DB5E5A9000195C5 /* CameraButtonView.m in Sources */,
 				291C7CA81C8572EB00D0FE02 /* CollectionViewController.m in Sources */,
 				29A1601D1C768E04004BF934 /* ViewController.m in Sources */,
+				F495B76F1DB5D28800A11ACF /* NewCameraView.m in Sources */,
 				29A160231C768E04004BF934 /* TrueGrowthSF.xcdatamodeld in Sources */,
 				298B39B51C8A4DEF006C1C40 /* PhotoHeaderView.m in Sources */,
 				F4BCB4481D7E38C700A665B8 /* TrueGrowthSF.xcdatamodeld in Sources */,
@@ -483,8 +565,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_HEADERS_RUN_UNIFDEF = NO;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TrueGrowthSF",
@@ -505,6 +592,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Agile-Associates.TrueGrowthSF";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TrueGrowthSF/TrueGrowthSF-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -514,8 +604,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_HEADERS_RUN_UNIFDEF = NO;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TrueGrowthSF",
@@ -536,6 +631,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Agile-Associates.TrueGrowthSF";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TrueGrowthSF/TrueGrowthSF-Bridging-Header.h";
 			};
 			name = Release;
 		};
