@@ -74,7 +74,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="caa-iS-fbL" id="K3H-Zg-ooy"/>
                         <outlet property="passwordTextField" destination="1KJ-0e-QLt" id="MNt-e5-LLK"/>
-                        <segue destination="mHH-SF-KyX" kind="presentation" identifier="login_success" id="9vc-bA-r6g"/>
+                        <segue destination="2ZL-ss-b4r" kind="presentation" identifier="login_success" id="9vc-bA-r6g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -97,7 +97,7 @@
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5Sq-55-YPA">
                             <size key="itemSize" width="320" height="187"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
@@ -127,38 +127,28 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="PhotoHeaderView" id="BWm-w4-Wcg" customClass="PhotoHeaderView">
-                            <rect key="frame" x="0.0" y="207" width="320" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HzB-Vy-Ar4">
-                                    <rect key="frame" x="0.0" y="3" width="320" height="44"/>
-                                    <items>
-                                        <barButtonItem style="plain" systemItem="camera" id="njY-3q-OBa">
-                                            <inset key="imageInsets" minX="250" minY="0.0" maxX="-19" maxY="0.0"/>
-                                            <color key="tintColor" red="0.059319617646131154" green="0.84369081440000004" blue="0.28171532367202096" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="cameraClicked:" destination="BWm-w4-Wcg" id="JdS-a5-CBc"/>
-                                                <segue destination="WUK-Ki-iks" kind="presentation" id="J4J-6p-dDB"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </items>
-                                    <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </toolbar>
-                            </subviews>
-                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="mHH-SF-KyX" id="s3n-qy-B0q"/>
                             <outlet property="delegate" destination="mHH-SF-KyX" id="WEW-ZG-rfh"/>
                         </connections>
                     </collectionView>
-                    <toolbarItems/>
+                    <toolbarItems>
+                        <barButtonItem width="140" style="plain" systemItem="fixedSpace" id="ta0-iv-Bzr"/>
+                        <barButtonItem systemItem="camera" id="bKn-Fd-TV9">
+                            <color key="tintColor" red="0.059319617650000003" green="0.84369081440000004" blue="0.28171532370000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="WUK-Ki-iks" kind="showDetail" id="6GT-0V-7J4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="128" style="plain" systemItem="fixedSpace" id="afH-HQ-WLe"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="R2A-86-xYu"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9G-iJ-P1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="644" y="-919"/>
+            <point key="canvasLocation" x="1176" y="-919"/>
         </scene>
         <!--New Camera View-->
         <scene sceneID="L2T-or-0ad">
@@ -242,7 +232,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <segue destination="mHH-SF-KyX" kind="presentation" identifier="exitAfterPhotoUpload" id="Pis-Nd-Ekv"/>
+                                                        <segue destination="2ZL-ss-b4r" kind="presentation" identifier="exitAfterPhotoUpload" id="Pis-Nd-Ekv"/>
                                                     </connections>
                                                 </button>
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="c46-PW-mfd">
@@ -275,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BfH-an-gUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1221" y="-919"/>
+            <point key="canvasLocation" x="1753" y="-919"/>
         </scene>
         <!--Camera View-->
         <scene sceneID="eBm-hH-hgz">
@@ -331,10 +321,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lc3-WA-OMy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1757" y="-919"/>
+            <point key="canvasLocation" x="2289" y="-919"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NIu-Jz-byJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" toolbarHidden="NO" id="2ZL-ss-b4r" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zmQ-PC-yzj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="na4-I1-VkS">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="mHH-SF-KyX" kind="relationship" relationship="rootViewController" id="wU8-hC-Blj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="co4-Ji-wi1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="644" y="-919"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Pis-Nd-Ekv"/>
+        <segue reference="9vc-bA-r6g"/>
     </inferredMetricsTieBreakers>
 </document>
