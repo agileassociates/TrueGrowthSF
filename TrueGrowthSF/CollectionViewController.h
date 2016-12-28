@@ -13,10 +13,14 @@
 @property (nonatomic, strong) NSMutableArray *urlArray;
 @property (nonatomic, strong) NSMutableArray *userArray;
 @property (nonatomic, strong) NSMutableArray *userProfileArray;
+@property (nonatomic, strong) NSMutableArray *numberOfLikesArray;
 
+@property (nonatomic) BOOL liked;
+@property (nonatomic) int numberOfLikes;
 
 
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue;
 
+- (IBAction)likeButtonClicked:(id)sender;
 
 @end

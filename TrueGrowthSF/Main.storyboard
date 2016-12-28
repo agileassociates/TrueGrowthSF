@@ -3,10 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="SanFranciscoText-Bold.otf">
             <string>SanFranciscoText-Bold</string>
+        </mutableArray>
+        <mutableArray key="SanFranciscoText-Regular.otf">
+            <string>SanFranciscoText-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -95,17 +99,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5Sq-55-YPA">
-                            <size key="itemSize" width="320" height="187"/>
+                            <size key="itemSize" width="320" height="210"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="Cell" id="O44-uX-Xf3">
-                                <rect key="frame" x="0.0" y="20" width="320" height="187"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="210"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="187"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iN-pS-JLH">
@@ -121,10 +125,27 @@
                                             <rect key="frame" x="8" y="0.0" width="30" height="30"/>
                                             <color key="backgroundColor" red="0.062946369180000003" green="1" blue="0.65403931910000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="400" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQf-3k-a2w">
+                                            <rect key="frame" x="273" y="173" width="28" height="21"/>
+                                            <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="un2-y0-5br">
+                                            <rect key="frame" x="249" y="181" width="21" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <state key="normal" backgroundImage="like.png"/>
+                                            <connections>
+                                                <action selector="likeButtonClicked:" destination="mHH-SF-KyX" eventType="touchUpInside" id="cDM-CQ-Ves"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="sQf-3k-a2w" secondAttribute="bottom" id="LWq-D0-8Jl"/>
+                                </constraints>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -148,7 +169,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9G-iJ-P1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1176" y="-919"/>
+            <point key="canvasLocation" x="1090" y="-943"/>
         </scene>
         <!--New Camera View-->
         <scene sceneID="L2T-or-0ad">
@@ -346,6 +367,9 @@
             <point key="canvasLocation" x="644" y="-919"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="like.png" width="200" height="200"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9vc-bA-r6g"/>
     </inferredMetricsTieBreakers>

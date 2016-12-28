@@ -22,6 +22,7 @@
 		29C0295B1C8ADE1900B07C0C /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C0295A1C8ADE1900B07C0C /* CameraView.m */; };
 		29C2B4DC1C856987005378CD /* FUTURITY.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29C2B4DB1C856987005378CD /* FUTURITY.jpg */; };
 		9514743E48CE8A3E9AF960EA /* libPods-TrueGrowthSF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1CB3022DE7AFEC6FB327983 /* libPods-TrueGrowthSF.a */; };
+		F4303A411E014A6D002268E4 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = F4303A401E014A6D002268E4 /* like.png */; };
 		F44F0FEB1DB5E5A9000195C5 /* CameraButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = F44F0FEA1DB5E5A9000195C5 /* CameraButtonView.m */; };
 		F495B71C1DAF30EE00A11ACF /* SanFranciscoDisplay-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F495B7071DAF30ED00A11ACF /* SanFranciscoDisplay-Black.otf */; };
 		F495B71D1DAF30EE00A11ACF /* SanFranciscoDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F495B7081DAF30ED00A11ACF /* SanFranciscoDisplay-Bold.otf */; };
@@ -79,6 +80,7 @@
 		29C2B4DB1C856987005378CD /* FUTURITY.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FUTURITY.jpg; sourceTree = "<group>"; };
 		7647B379F1771FA2CB96B6DF /* Pods-TrueGrowthSF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueGrowthSF.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrueGrowthSF/Pods-TrueGrowthSF.release.xcconfig"; sourceTree = "<group>"; };
 		A1CB3022DE7AFEC6FB327983 /* libPods-TrueGrowthSF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrueGrowthSF.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4303A401E014A6D002268E4 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
 		F44EA3821D852D0B00748C39 /* TrueGrowthSF 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TrueGrowthSF 3.xcdatamodel"; sourceTree = "<group>"; };
 		F44F0FE91DB5E5A9000195C5 /* CameraButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraButtonView.h; sourceTree = "<group>"; };
 		F44F0FEA1DB5E5A9000195C5 /* CameraButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraButtonView.m; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				29A1601C1C768E04004BF934 /* ViewController.m */,
 				29A160241C768E04004BF934 /* Assets.xcassets */,
 				296D18701C76F4900035FD12 /* newsfeed-48.png */,
+				F4303A401E014A6D002268E4 /* like.png */,
 				29C2B4DB1C856987005378CD /* FUTURITY.jpg */,
 				F4DB293D1D760BD40052D6AC /* Bolts.framework */,
 				F4DB293B1D7608CC0052D6AC /* FBSDKCoreKit.framework */,
@@ -370,6 +373,7 @@
 			files = (
 				F495B71C1DAF30EE00A11ACF /* SanFranciscoDisplay-Black.otf in Resources */,
 				F495B71D1DAF30EE00A11ACF /* SanFranciscoDisplay-Bold.otf in Resources */,
+				F4303A411E014A6D002268E4 /* like.png in Resources */,
 				F495B71E1DAF30EE00A11ACF /* SanFranciscoDisplay-Heavy.otf in Resources */,
 				F495B71F1DAF30EE00A11ACF /* SanFranciscoDisplay-Light.otf in Resources */,
 				F495B7201DAF30EE00A11ACF /* SanFranciscoDisplay-Medium.otf in Resources */,

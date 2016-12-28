@@ -32,6 +32,7 @@
     _urlArray = [[NSMutableArray alloc] init];
     _userArray = [[NSMutableArray alloc] init];
     _userProfileArray = [[NSMutableArray alloc] init];
+    _numberOfLikesArray = [[NSMutableArray alloc] init];
     
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -46,6 +47,7 @@
     
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     
+    manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions: NSJSONReadingMutableContainers];
     
     
     [manager GET:@"https://true-growth-api.herokuapp.com/api/photos" parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
@@ -89,6 +91,7 @@
             [_urlArray addObject:responseObject[@"data"][i][@"attributes"][@"url"]];
             [_userArray addObject:responseObject[@"data"][i][@"attributes"][@"user_name"]];
             [_userProfileArray addObject:responseObject[@"data"][i][@"attributes"][@"user_profile"]];
+            [_numberOfLikesArray addObject:responseObject[@"data"][i][@"attributes"][@"likes"]];
 
             
             
@@ -111,6 +114,12 @@
         NSLog(@"urlArray: %@", _urlArray);
         NSLog(@"userArray: %@", _userArray);
         NSLog(@"userProfileArray: %@", _userProfileArray);
+        NSLog(@"likes: %@", _numberOfLikesArray);
+        int countLikes = 0;
+       
+        NSLog(@"likes[2]: %@", _numberOfLikesArray[2]);
+
+        
         
        [self.collectionView reloadData];
 
@@ -176,6 +185,20 @@
     userProfile.layer.masksToBounds = YES;
     userProfile.layer.borderWidth = 0;
     
+    UILabel *labelNumberOfLikes = (UILabel *)[cell viewWithTag:400];
+    
+    
+    int countLikes = 0;
+    for(id key in _numberOfLikesArray[indexPath.row]){
+        if([_numberOfLikesArray[indexPath.row][key] isEqual: @"yes"]){
+            countLikes++;
+        }
+    }
+    NSString *strx = [NSString stringWithFormat:@"%d", countLikes];
+
+    
+    labelNumberOfLikes.text = strx;
+
     
 
 
@@ -234,10 +257,49 @@ return cell;
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
     }
 
+- (IBAction)likeButtonClicked:(id)sender {
+    UICollectionViewCell *cell = (UICollectionViewCell*)[[sender superview] superview];
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+    UILabel *labelNumberOfLikes = (UILabel *)[cell viewWithTag:400];
+    
+    NSString *user_id=[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
+    int liked =0;
+    
+    NSMutableDictionary *numberOfLikesDict = [[NSMutableDictionary alloc] init];
+    numberOfLikesDict = _numberOfLikesArray[indexPath.row];
+
+    
+    for(id key in numberOfLikesDict){
+        if(key == user_id){
+            liked = 1;
+        }
+    }
 
 
+    int number = 0;
+    if (liked == 1){
+        number = labelNumberOfLikes.text.integerValue;
+        number--;
+        NSString *numberToText = [NSString stringWithFormat:@"%d", number];
+        labelNumberOfLikes.text = numberToText;
+        [numberOfLikesDict removeObjectForKey:user_id];
 
+        
+        
+    }else{
+        number = labelNumberOfLikes.text.integerValue;
+        number++;
+        NSString *numberToText = [NSString stringWithFormat:@"%d", number];
+        labelNumberOfLikes.text = numberToText;
+        [numberOfLikesDict setObject:@"yes" forKey:user_id];
 
+        
+    }
+
+    
+    
+
+}
 
 @end
 
