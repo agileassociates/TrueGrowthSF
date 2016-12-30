@@ -10,6 +10,8 @@
 #import "UIKit+AFNetworking.h"
 #import "PhotoHeaderView.h"
 #import <CoreData/CoreData.h>
+#import "AFNetworking.h"
+
 
 
 
@@ -33,6 +35,7 @@
     _userArray = [[NSMutableArray alloc] init];
     _userProfileArray = [[NSMutableArray alloc] init];
     _numberOfLikesArray = [[NSMutableArray alloc] init];
+    _photoIdArray = [[NSMutableArray alloc] init];
     
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -92,6 +95,8 @@
             [_userArray addObject:responseObject[@"data"][i][@"attributes"][@"user_name"]];
             [_userProfileArray addObject:responseObject[@"data"][i][@"attributes"][@"user_profile"]];
             [_numberOfLikesArray addObject:responseObject[@"data"][i][@"attributes"][@"likes"]];
+            [_photoIdArray addObject:responseObject[@"data"][i][@"id"]];
+
 
             
             
@@ -285,6 +290,69 @@ return cell;
         [numberOfLikesDict removeObjectForKey:user_id];
 
         
+        // send post request to server
+        
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        
+        AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+        policy.allowInvalidCertificates = YES;
+        manager.securityPolicy = policy;
+        
+        manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        
+        [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        
+        
+        
+        NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+        params[@"user_id"] = user_id;
+        params[@"photo_id"] = _photoIdArray[indexPath.row];
+        
+        
+        
+        [manager POST:@"https://true-growth-api.herokuapp.com/api/photos/hated" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+            
+            if ( responseObject[@"errors"] == NULL){
+                
+                
+                //NSLog(@"%@", responseObject[@"data"][@"attributes"][@"auth_token"]);
+                NSLog(@"%@", responseObject);
+                
+            } else {
+                
+                UIAlertController * alert=   [UIAlertController
+                                              alertControllerWithTitle:@"Info"
+                                              message:responseObject[@"errors"]
+                                              preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* ok = [UIAlertAction
+                                     actionWithTitle:@"OK"
+                                     style:UIAlertActionStyleDefault
+                                     handler:^(UIAlertAction * action)
+                                     {
+                                         [alert dismissViewControllerAnimated:YES completion:nil];
+                                         
+                                     }];
+                
+                [alert addAction:ok];
+                
+                [self presentViewController:alert animated:YES completion:nil];
+                
+                NSLog(@"JSON: %@", responseObject[@"errors"]);
+                
+                
+            }
+            
+            
+            
+        } failure:^(NSURLSessionTask *operation, NSError *error) {
+            
+            NSLog(@"error = %@", error);
+            
+        }];
+        
+        
+        
+        
         
     }else{
         number = labelNumberOfLikes.text.integerValue;
@@ -292,6 +360,69 @@ return cell;
         NSString *numberToText = [NSString stringWithFormat:@"%d", number];
         labelNumberOfLikes.text = numberToText;
         [numberOfLikesDict setObject:@"yes" forKey:user_id];
+        
+        
+        
+        
+        // send post request to server
+        
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        
+        AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+        policy.allowInvalidCertificates = YES;
+        manager.securityPolicy = policy;
+        
+        manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        
+        [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        
+        
+        
+        NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+        params[@"user_id"] = user_id;
+        params[@"photo_id"] = _photoIdArray[indexPath.row];
+        
+        
+        
+        [manager POST:@"https://true-growth-api.herokuapp.com/api/photos/liked" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+            
+            if ( responseObject[@"errors"] == NULL){
+                
+                
+                //NSLog(@"%@", responseObject[@"data"][@"attributes"][@"auth_token"]);
+                NSLog(@"%@", responseObject);
+                
+            } else {
+                
+                UIAlertController * alert=   [UIAlertController
+                                              alertControllerWithTitle:@"Info"
+                                              message:responseObject[@"errors"]
+                                              preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* ok = [UIAlertAction
+                                     actionWithTitle:@"OK"
+                                     style:UIAlertActionStyleDefault
+                                     handler:^(UIAlertAction * action)
+                                     {
+                                         [alert dismissViewControllerAnimated:YES completion:nil];
+                                         
+                                     }];
+                
+                [alert addAction:ok];
+                
+                [self presentViewController:alert animated:YES completion:nil];
+                
+                NSLog(@"JSON: %@", responseObject[@"errors"]);
+                
+                
+            }
+            
+            
+            
+        } failure:^(NSURLSessionTask *operation, NSError *error) {
+            
+            NSLog(@"error = %@", error);
+            
+        }];
 
         
     }

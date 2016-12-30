@@ -14,6 +14,8 @@
 @property (nonatomic, strong) NSMutableArray *userArray;
 @property (nonatomic, strong) NSMutableArray *userProfileArray;
 @property (nonatomic, strong) NSMutableArray *numberOfLikesArray;
+@property (nonatomic, strong) NSMutableArray *photoIdArray;
+
 
 @property (nonatomic) BOOL liked;
 @property (nonatomic) int numberOfLikes;
