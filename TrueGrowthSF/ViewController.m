@@ -125,16 +125,24 @@
                 
             };
             
+            NSLog(@"responseObject: %@", responseObject);
+            
             NSString *user_id = responseObject[@"data"][@"id"];
             NSLog(@" user id is %@", user_id);
             [[NSUserDefaults standardUserDefaults] setObject:user_id forKey:@"userId"];
             [[NSUserDefaults standardUserDefaults] synchronize];
             
-            NSString *user_profile = responseObject[@"data"][@"attributes"][@"user_profile"];
-            NSLog(@" user profile is %@", user_profile);
-            [[NSUserDefaults standardUserDefaults] setObject:user_profile forKey:@"userProfile"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-
+            if ( responseObject[@"data"][@"attributes"][@"user_profile"] == (id)[NSNull null]){
+                NSString *user_profile = @"empty";
+                NSLog(@" user profile is %@", user_profile);
+                [[NSUserDefaults standardUserDefaults] setObject:user_profile forKey:@"userProfile"];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+            } else {
+                NSString *user_profile = responseObject[@"data"][@"attributes"][@"user_profile"];
+                NSLog(@" user profile is %@", user_profile);
+                [[NSUserDefaults standardUserDefaults] setObject:user_profile forKey:@"userProfile"];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+            }
             
             
             

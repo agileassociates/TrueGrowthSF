@@ -49,6 +49,7 @@
 		F4BCB4431D7E2A8F00A665B8 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BCB4421D7E2A8F00A665B8 /* AssetsLibrary.framework */; };
 		F4BCB4451D7E388200A665B8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BCB4441D7E388200A665B8 /* CoreData.framework */; };
 		F4BCB4481D7E38C700A665B8 /* TrueGrowthSF.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4BCB4461D7E38C700A665B8 /* TrueGrowthSF.xcdatamodeld */; };
+		F4D2DD871E19E8190095FBF0 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D2DD861E19E8190095FBF0 /* SignInViewController.m */; };
 		F4DB293A1D7608A30052D6AC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB29391D7608A30052D6AC /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		F4DB293C1D7608CC0052D6AC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB293B1D7608CC0052D6AC /* FBSDKCoreKit.framework */; };
 		F4DB293E1D760BD40052D6AC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB293D1D760BD40052D6AC /* Bolts.framework */; };
@@ -141,6 +142,8 @@
 		F4BCB4441D7E388200A665B8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F4BCB4471D7E38C700A665B8 /* TrueGrowthSF.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrueGrowthSF.xcdatamodel; sourceTree = "<group>"; };
 		F4BCB4491D828AF700A665B8 /* TrueGrowthSF 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TrueGrowthSF 2.xcdatamodel"; sourceTree = "<group>"; };
+		F4D2DD851E19E8190095FBF0 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		F4D2DD861E19E8190095FBF0 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		F4DB29391D7608A30052D6AC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		F4DB293B1D7608CC0052D6AC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		F4DB293D1D760BD40052D6AC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -228,6 +231,8 @@
 				291C7CA71C8572EB00D0FE02 /* CollectionViewController.m */,
 				29A1601B1C768E04004BF934 /* ViewController.h */,
 				29A1601C1C768E04004BF934 /* ViewController.m */,
+				F4D2DD851E19E8190095FBF0 /* SignInViewController.h */,
+				F4D2DD861E19E8190095FBF0 /* SignInViewController.m */,
 				29A160241C768E04004BF934 /* Assets.xcassets */,
 				296D18701C76F4900035FD12 /* newsfeed-48.png */,
 				F4303A401E014A6D002268E4 /* like.png */,
@@ -460,6 +465,7 @@
 				F44F0FEB1DB5E5A9000195C5 /* CameraButtonView.m in Sources */,
 				291C7CA81C8572EB00D0FE02 /* CollectionViewController.m in Sources */,
 				29A1601D1C768E04004BF934 /* ViewController.m in Sources */,
+				F4D2DD871E19E8190095FBF0 /* SignInViewController.m in Sources */,
 				F495B76F1DB5D28800A11ACF /* NewCameraView.m in Sources */,
 				29A160231C768E04004BF934 /* TrueGrowthSF.xcdatamodeld in Sources */,
 				298B39B51C8A4DEF006C1C40 /* PhotoHeaderView.m in Sources */,
