@@ -69,8 +69,10 @@
             
             NSString *user_id = responseObject[@"data"][@"id"];
             NSLog(@" user id is %@", user_id);
-            [[NSUserDefaults standardUserDefaults] setObject:user_id forKey:@"userId"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:user_id forKey:@"userId"];
+            [defaults synchronize];
             
             if ( responseObject[@"data"][@"attributes"][@"user_profile"]  == (id)[NSNull null]){
                 NSString *user_profile = @"empty";

@@ -19,6 +19,7 @@
             <string>SanFranciscoText-Regular</string>
             <string>SanFranciscoText-Regular</string>
             <string>SanFranciscoText-Regular</string>
+            <string>SanFranciscoText-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -109,6 +110,61 @@
             </objects>
             <point key="canvasLocation" x="-171" y="-746"/>
         </scene>
+        <!--Favorites Collection View Controller-->
+        <scene sceneID="GGg-N7-YiX">
+            <objects>
+                <collectionViewController id="UJZ-2Z-o6m" customClass="FavoritesCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="W4i-cE-bFo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gmk-yd-IIu">
+                            <size key="itemSize" width="293" height="172"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="39" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="qnL-RE-5Ds">
+                                <rect key="frame" x="13.5" y="103" width="293" height="172"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="293" height="172"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="900" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZl-1D-zGz">
+                                            <rect key="frame" x="20" y="13" width="256" height="21"/>
+                                            <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GF6-Ak-yux">
+                                            <rect key="frame" x="0.0" y="20" width="293" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="UJZ-2Z-o6m" id="fts-Pu-ZdX"/>
+                            <outlet property="delegate" destination="UJZ-2Z-o6m" id="gkV-nP-ze5"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="xsg-mh-rt9">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6iA-LI-IIb">
+                            <connections>
+                                <segue destination="2ZL-ss-b4r" kind="presentation" id="oSV-0G-fRE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OaZ-M2-FnP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="966" y="1383"/>
+        </scene>
         <!--Collection View Controller-->
         <scene sceneID="9xf-HD-YwG">
             <objects>
@@ -158,6 +214,13 @@
                                                 <action selector="likeButtonClicked:" destination="mHH-SF-KyX" eventType="touchUpInside" id="cDM-CQ-Ves"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCy-7Y-VV8">
+                                            <rect key="frame" x="193" y="176" width="29" height="26"/>
+                                            <state key="normal" backgroundImage="heart"/>
+                                            <connections>
+                                                <action selector="favoritesButtonClicked:" destination="mHH-SF-KyX" eventType="touchUpInside" id="jpo-ff-KDN"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -173,14 +236,24 @@
                         </connections>
                     </collectionView>
                     <toolbarItems>
-                        <barButtonItem width="140" style="plain" systemItem="fixedSpace" id="ta0-iv-Bzr"/>
+                        <barButtonItem systemItem="edit" id="6x2-p9-2Eg">
+                            <color key="tintColor" red="0.059319617650000003" green="0.84369081440000004" blue="0.28171532370000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" id="y57-EJ-Yrx"/>
+                        <barButtonItem width="97" style="plain" systemItem="fixedSpace" id="4UW-XC-J5y"/>
                         <barButtonItem systemItem="camera" id="bKn-Fd-TV9">
                             <color key="tintColor" red="0.059319617650000003" green="0.84369081440000004" blue="0.28171532370000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="WUK-Ki-iks" kind="showDetail" id="6GT-0V-7J4"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem width="128" style="plain" systemItem="fixedSpace" id="afH-HQ-WLe"/>
+                        <barButtonItem width="95" style="plain" systemItem="fixedSpace" id="IAw-Mb-qBj"/>
+                        <barButtonItem systemItem="bookmarks" id="vXV-pX-tVO">
+                            <color key="tintColor" red="0.059319617650000003" green="0.84369081440000004" blue="0.28171532370000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="xa9-uW-VgS" kind="presentation" id="hKU-dd-Crd"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="R2A-86-xYu"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -188,7 +261,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9G-iJ-P1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1090" y="-943"/>
+            <point key="canvasLocation" x="966" y="-247"/>
         </scene>
         <!--New Camera View-->
         <scene sceneID="L2T-or-0ad">
@@ -305,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BfH-an-gUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1753" y="-919"/>
+            <point key="canvasLocation" x="1557" y="-257"/>
         </scene>
         <!--Camera View-->
         <scene sceneID="eBm-hH-hgz">
@@ -446,11 +519,30 @@
             </objects>
             <point key="canvasLocation" x="-171" y="21"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fmt-g5-yWl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xa9-uW-VgS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XL3-No-dvh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UJZ-2Z-o6m" kind="relationship" relationship="rootViewController" id="8Wo-AY-gPj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Loi-Id-EqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="966" y="515"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="heart" width="102" height="102"/>
         <image name="like.png" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="37w-zt-yHD"/>
+        <segue reference="9vc-bA-r6g"/>
     </inferredMetricsTieBreakers>
 </document>

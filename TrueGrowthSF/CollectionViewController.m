@@ -432,5 +432,165 @@ return cell;
 
 }
 
+- (IBAction)favoritesButtonClicked:(id)sender {
+    
+    UICollectionViewCell *cell = (UICollectionViewCell*)[[sender superview] superview];
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+    NSString *photo_id = _photoIdArray[indexPath.row];
+    
+    NSDictionary *favorites = [[NSUserDefaults standardUserDefaults]
+                               dictionaryForKey:@"favorites"];
+    NSLog(@"Favorites: %@", favorites);
+    
+    NSString *user_id = [[NSUserDefaults standardUserDefaults] stringForKey:@"userId"];
+    
+    for(id key in favorites){
+        if(key == photo_id){
+            
+            AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+            
+            AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+            policy.allowInvalidCertificates = YES;
+            manager.securityPolicy = policy;
+            
+            manager.requestSerializer = [AFJSONRequestSerializer serializer];
+            
+            [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+            
+            
+            
+            NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+            params[@"user_id"] = user_id;
+            params[@"photo_id"] = _photoIdArray[indexPath.row];
+            
+            
+            
+            [manager POST:@"https://true-growth-api.herokuapp.com/api/users/unfavor" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+                
+                if ( responseObject[@"errors"] == NULL){
+                    
+                    
+                    //NSLog(@"%@", responseObject[@"data"][@"attributes"][@"auth_token"]);
+                    NSLog(@"%@", responseObject);
+                    
+                } else {
+                    
+                    UIAlertController * alert=   [UIAlertController
+                                                  alertControllerWithTitle:@"Info"
+                                                  message:responseObject[@"errors"]
+                                                  preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction* ok = [UIAlertAction
+                                         actionWithTitle:@"OK"
+                                         style:UIAlertActionStyleDefault
+                                         handler:^(UIAlertAction * action)
+                                         {
+                                             [alert dismissViewControllerAnimated:YES completion:nil];
+                                             
+                                         }];
+                    
+                    [alert addAction:ok];
+                    
+                    [self presentViewController:alert animated:YES completion:nil];
+                    
+                    NSLog(@"JSON: %@", responseObject[@"errors"]);
+                    
+                    
+                }
+                
+                
+                
+            } failure:^(NSURLSessionTask *operation, NSError *error) {
+                
+                NSLog(@"error = %@", error);
+                
+            }];
+            
+            NSMutableDictionary *favoritesDictionary = [[NSMutableDictionary alloc] init];
+            favoritesDictionary = [favorites mutableCopy];
+            [favoritesDictionary removeObjectForKey:photo_id];
+            
+            [[NSUserDefaults standardUserDefaults] setObject:favoritesDictionary forKey:@"favorites"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            
+            
+        } else{
+            
+            AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+            
+            AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+            policy.allowInvalidCertificates = YES;
+            manager.securityPolicy = policy;
+            
+            manager.requestSerializer = [AFJSONRequestSerializer serializer];
+            
+            [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+            
+            
+            
+            NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+            params[@"user_id"] = user_id;
+            params[@"photo_id"] = _photoIdArray[indexPath.row];
+            params[@"photo_url"] = _urlArray[indexPath.row];
+            
+            [manager POST:@"https://true-growth-api.herokuapp.com/api/users/favor" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+                
+                if ( responseObject[@"errors"] == NULL){
+                    
+                    
+                    //NSLog(@"%@", responseObject[@"data"][@"attributes"][@"auth_token"]);
+                    NSLog(@"%@", responseObject);
+                    
+                } else {
+                    
+                    UIAlertController * alert=   [UIAlertController
+                                                  alertControllerWithTitle:@"Info"
+                                                  message:responseObject[@"errors"]
+                                                  preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction* ok = [UIAlertAction
+                                         actionWithTitle:@"OK"
+                                         style:UIAlertActionStyleDefault
+                                         handler:^(UIAlertAction * action)
+                                         {
+                                             [alert dismissViewControllerAnimated:YES completion:nil];
+                                             
+                                         }];
+                    
+                    [alert addAction:ok];
+                    
+                    [self presentViewController:alert animated:YES completion:nil];
+                    
+                    NSLog(@"JSON: %@", responseObject[@"errors"]);
+                    
+                    
+                }
+                
+                
+                
+            } failure:^(NSURLSessionTask *operation, NSError *error) {
+                
+                NSLog(@"error = %@", error);
+                
+            }];
+
+            NSMutableDictionary *favoritesDictionary = [[NSMutableDictionary alloc] init];
+            favoritesDictionary = [favorites mutableCopy];
+            NSString *url = _urlArray[indexPath.row];
+            favoritesDictionary[photo_id] = url;
+            
+            [[NSUserDefaults standardUserDefaults] setObject:favoritesDictionary forKey:@"favorites"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+
+        }
+        
+    };
+
+
+    
+    
+}
+
+
 @end
 

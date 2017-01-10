@@ -129,7 +129,11 @@
             
             NSString *user_id = responseObject[@"data"][@"id"];
             NSLog(@" user id is %@", user_id);
+            NSString *favorites = responseObject[@"data"][@"attributes"][@"favorites"];
+            NSLog(@" favorites is %@", favorites);
+            
             [[NSUserDefaults standardUserDefaults] setObject:user_id forKey:@"userId"];
+            [[NSUserDefaults standardUserDefaults] setObject:favorites forKey:@"favorites"];
             [[NSUserDefaults standardUserDefaults] synchronize];
             
             if ( responseObject[@"data"][@"attributes"][@"user_profile"] == (id)[NSNull null]){

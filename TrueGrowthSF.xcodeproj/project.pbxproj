@@ -54,6 +54,7 @@
 		F4DB293C1D7608CC0052D6AC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB293B1D7608CC0052D6AC /* FBSDKCoreKit.framework */; };
 		F4DB293E1D760BD40052D6AC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB293D1D760BD40052D6AC /* Bolts.framework */; };
 		F4DF8F9E1DAD7B9C00783ED7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DF8F9D1DAD7B9C00783ED7 /* Main.storyboard */; };
+		F4F176F91E24850900C3CAD5 /* FavoritesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F176F81E24850900C3CAD5 /* FavoritesCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +149,8 @@
 		F4DB293B1D7608CC0052D6AC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		F4DB293D1D760BD40052D6AC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		F4DF8F9D1DAD7B9C00783ED7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F4F176F71E24850900C3CAD5 /* FavoritesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesCollectionViewController.h; sourceTree = "<group>"; };
+		F4F176F81E24850900C3CAD5 /* FavoritesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				F4DF8F9D1DAD7B9C00783ED7 /* Main.storyboard */,
+				F4F176F71E24850900C3CAD5 /* FavoritesCollectionViewController.h */,
+				F4F176F81E24850900C3CAD5 /* FavoritesCollectionViewController.m */,
 				29A160191C768E04004BF934 /* AppDelegate.m */,
 				29A160181C768E04004BF934 /* AppDelegate.h */,
 				29C0295A1C8ADE1900B07C0C /* CameraView.m */,
@@ -465,6 +470,7 @@
 				F44F0FEB1DB5E5A9000195C5 /* CameraButtonView.m in Sources */,
 				291C7CA81C8572EB00D0FE02 /* CollectionViewController.m in Sources */,
 				29A1601D1C768E04004BF934 /* ViewController.m in Sources */,
+				F4F176F91E24850900C3CAD5 /* FavoritesCollectionViewController.m in Sources */,
 				F4D2DD871E19E8190095FBF0 /* SignInViewController.m in Sources */,
 				F495B76F1DB5D28800A11ACF /* NewCameraView.m in Sources */,
 				29A160231C768E04004BF934 /* TrueGrowthSF.xcdatamodeld in Sources */,

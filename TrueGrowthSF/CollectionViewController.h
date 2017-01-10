@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSMutableArray *photoIdArray;
 
 
+
 @property (nonatomic) BOOL liked;
 @property (nonatomic) int numberOfLikes;
 
@@ -24,5 +25,7 @@
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue;
 
 - (IBAction)likeButtonClicked:(id)sender;
+- (IBAction)favoritesButtonClicked:(id)sender;
+
 
 @end
