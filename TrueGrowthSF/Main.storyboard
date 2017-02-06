@@ -6,6 +6,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="SanFranciscoDisplay-Regular.otf">
+            <string>SanFranciscoDisplay-Regular</string>
+            <string>SanFranciscoDisplay-Regular</string>
+            <string>SanFranciscoDisplay-Regular</string>
+        </mutableArray>
         <mutableArray key="SanFranciscoText-Bold.otf">
             <string>SanFranciscoText-Bold</string>
         </mutableArray>
@@ -163,7 +168,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OaZ-M2-FnP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="1383"/>
+            <point key="canvasLocation" x="1778" y="1383"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="9xf-HD-YwG">
@@ -238,6 +243,9 @@
                     <toolbarItems>
                         <barButtonItem systemItem="edit" id="6x2-p9-2Eg">
                             <color key="tintColor" red="0.059319617650000003" green="0.84369081440000004" blue="0.28171532370000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="ZhP-TD-mWf" kind="presentation" id="UHZ-69-69B"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" id="y57-EJ-Yrx"/>
                         <barButtonItem width="97" style="plain" systemItem="fixedSpace" id="4UW-XC-J5y"/>
@@ -519,6 +527,137 @@
             </objects>
             <point key="canvasLocation" x="-171" y="21"/>
         </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="8iS-7r-nJX">
+            <objects>
+                <viewController definesPresentationContext="YES" id="iww-wF-al8" customClass="EditViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f3j-gk-fBW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gum-xD-amO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ri5-nW-VXA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sEN-UN-blJ">
+                                <rect key="frame" x="20" y="78" width="126" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Za-kH-Dgf">
+                                <rect key="frame" x="20" y="220" width="126" height="30"/>
+                                <state key="normal" title="Edit Photo"/>
+                                <connections>
+                                    <segue destination="MyL-hN-3ay" kind="showDetail" id="ERC-iL-6gd"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Qg-UL-tnH">
+                                <rect key="frame" x="20" y="294" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAZ-IK-iQ1">
+                                <rect key="frame" x="20" y="345" width="280" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Edit Email">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l00-8x-FQT">
+                                <rect key="frame" x="32" y="90" width="103" height="103"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OO8-cE-jFP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="isX-ox-6LS">
+                            <connections>
+                                <segue destination="2ZL-ss-b4r" kind="presentation" id="C1J-oD-BLV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xwd-jo-gO5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="697" y="976"/>
+        </scene>
+        <!--Edit Profile View Controller-->
+        <scene sceneID="whi-hh-f99">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="MyL-hN-3ay" customClass="EditProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tsx-ON-Klx"/>
+                        <viewControllerLayoutGuide type="bottom" id="KlA-cr-L3M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fjp-8v-xJd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qnb-e4-fEB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="yBD-mS-Zeb">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuc-R8-Hym">
+                                            <rect key="frame" x="70" y="349" width="180" height="30"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="18"/>
+                                            <state key="normal" title="Choose Photo">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="choosePhotoClicked:" destination="MyL-hN-3ay" eventType="touchUpInside" id="du8-n9-fQp"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhT-sf-Np6">
+                                            <rect key="frame" x="70" y="400" width="180" height="30"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="18"/>
+                                            <state key="normal" title="Upload Photo">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="uploadPhotoClicked:" destination="MyL-hN-3ay" eventType="touchUpInside" id="iI7-lP-fxw"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sll-be-GVw">
+                                            <rect key="frame" x="70" y="451" width="180" height="30"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="18"/>
+                                            <state key="normal" title="Cancel">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="2ZL-ss-b4r" kind="presentation" identifier="exitAfterProfileUpload" id="bBQ-wv-7kX"/>
+                                            </connections>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MSu-m8-Rux">
+                                            <rect key="frame" x="22" y="40" width="275" height="169"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <blurEffect style="extraLight"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="pictureView" destination="MSu-m8-Rux" id="TP9-XG-dwj"/>
+                        <outlet property="uploadButton" destination="hhT-sf-Np6" id="A7n-Qf-5J4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="56R-kO-ZRU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="697" y="1676"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="fmt-g5-yWl">
             <objects>
@@ -535,7 +674,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Loi-Id-EqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="515"/>
+            <point key="canvasLocation" x="1778" y="759"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="L6s-aJ-GLr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZhP-TD-mWf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xtU-kq-uTm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iww-wF-al8" kind="relationship" relationship="rootViewController" id="NbL-7F-DjT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PzF-CE-4A7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-115" y="976"/>
         </scene>
     </scenes>
     <resources>
@@ -543,6 +701,6 @@
         <image name="like.png" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9vc-bA-r6g"/>
+        <segue reference="Pis-Nd-Ekv"/>
     </inferredMetricsTieBreakers>
 </document>

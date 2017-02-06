@@ -55,6 +55,8 @@
 		F4DB293E1D760BD40052D6AC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB293D1D760BD40052D6AC /* Bolts.framework */; };
 		F4DF8F9E1DAD7B9C00783ED7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DF8F9D1DAD7B9C00783ED7 /* Main.storyboard */; };
 		F4F176F91E24850900C3CAD5 /* FavoritesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F176F81E24850900C3CAD5 /* FavoritesCollectionViewController.m */; };
+		F4F176FC1E2542CF00C3CAD5 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F176FB1E2542CF00C3CAD5 /* EditViewController.m */; };
+		F4F176FF1E48533F00C3CAD5 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F176FE1E48533F00C3CAD5 /* EditProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -151,6 +153,10 @@
 		F4DF8F9D1DAD7B9C00783ED7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F4F176F71E24850900C3CAD5 /* FavoritesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesCollectionViewController.h; sourceTree = "<group>"; };
 		F4F176F81E24850900C3CAD5 /* FavoritesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesCollectionViewController.m; sourceTree = "<group>"; };
+		F4F176FA1E2542CF00C3CAD5 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		F4F176FB1E2542CF00C3CAD5 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		F4F176FD1E48533F00C3CAD5 /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
+		F4F176FE1E48533F00C3CAD5 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +226,10 @@
 			isa = PBXGroup;
 			children = (
 				F4DF8F9D1DAD7B9C00783ED7 /* Main.storyboard */,
+				F4F176FD1E48533F00C3CAD5 /* EditProfileViewController.h */,
+				F4F176FE1E48533F00C3CAD5 /* EditProfileViewController.m */,
+				F4F176FA1E2542CF00C3CAD5 /* EditViewController.h */,
+				F4F176FB1E2542CF00C3CAD5 /* EditViewController.m */,
 				F4F176F71E24850900C3CAD5 /* FavoritesCollectionViewController.h */,
 				F4F176F81E24850900C3CAD5 /* FavoritesCollectionViewController.m */,
 				29A160191C768E04004BF934 /* AppDelegate.m */,
@@ -468,6 +478,7 @@
 			files = (
 				29C0295B1C8ADE1900B07C0C /* CameraView.m in Sources */,
 				F44F0FEB1DB5E5A9000195C5 /* CameraButtonView.m in Sources */,
+				F4F176FF1E48533F00C3CAD5 /* EditProfileViewController.m in Sources */,
 				291C7CA81C8572EB00D0FE02 /* CollectionViewController.m in Sources */,
 				29A1601D1C768E04004BF934 /* ViewController.m in Sources */,
 				F4F176F91E24850900C3CAD5 /* FavoritesCollectionViewController.m in Sources */,
@@ -475,6 +486,7 @@
 				F495B76F1DB5D28800A11ACF /* NewCameraView.m in Sources */,
 				29A160231C768E04004BF934 /* TrueGrowthSF.xcdatamodeld in Sources */,
 				298B39B51C8A4DEF006C1C40 /* PhotoHeaderView.m in Sources */,
+				F4F176FC1E2542CF00C3CAD5 /* EditViewController.m in Sources */,
 				F4BCB4481D7E38C700A665B8 /* TrueGrowthSF.xcdatamodeld in Sources */,
 				29A1601A1C768E04004BF934 /* AppDelegate.m in Sources */,
 				29A160171C768E04004BF934 /* main.m in Sources */,
