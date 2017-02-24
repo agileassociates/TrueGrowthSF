@@ -54,6 +54,7 @@
 		F4DB293C1D7608CC0052D6AC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB293B1D7608CC0052D6AC /* FBSDKCoreKit.framework */; };
 		F4DB293E1D760BD40052D6AC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DB293D1D760BD40052D6AC /* Bolts.framework */; };
 		F4DF8F9E1DAD7B9C00783ED7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DF8F9D1DAD7B9C00783ED7 /* Main.storyboard */; };
+		F4EC82151E5FF309007F958D /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EC82141E5FF309007F958D /* FBSDKShareKit.framework */; };
 		F4F176F91E24850900C3CAD5 /* FavoritesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F176F81E24850900C3CAD5 /* FavoritesCollectionViewController.m */; };
 		F4F176FC1E2542CF00C3CAD5 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F176FB1E2542CF00C3CAD5 /* EditViewController.m */; };
 		F4F176FF1E48533F00C3CAD5 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F176FE1E48533F00C3CAD5 /* EditProfileViewController.m */; };
@@ -151,6 +152,7 @@
 		F4DB293B1D7608CC0052D6AC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		F4DB293D1D760BD40052D6AC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		F4DF8F9D1DAD7B9C00783ED7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F4EC82141E5FF309007F958D /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		F4F176F71E24850900C3CAD5 /* FavoritesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesCollectionViewController.h; sourceTree = "<group>"; };
 		F4F176F81E24850900C3CAD5 /* FavoritesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesCollectionViewController.m; sourceTree = "<group>"; };
 		F4F176FA1E2542CF00C3CAD5 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			files = (
 				F4BCB4451D7E388200A665B8 /* CoreData.framework in Frameworks */,
 				F4BCB4431D7E2A8F00A665B8 /* AssetsLibrary.framework in Frameworks */,
+				F4EC82151E5FF309007F958D /* FBSDKShareKit.framework in Frameworks */,
 				29187B561C90298A00B68C73 /* SystemConfiguration.framework in Frameworks */,
 				29187B541C90297D00B68C73 /* libz.tbd in Frameworks */,
 				29187B521C90295800B68C73 /* libsqlite3.tbd in Frameworks */,
@@ -251,6 +254,7 @@
 				29A160241C768E04004BF934 /* Assets.xcassets */,
 				296D18701C76F4900035FD12 /* newsfeed-48.png */,
 				F4303A401E014A6D002268E4 /* like.png */,
+				F4EC82141E5FF309007F958D /* FBSDKShareKit.framework */,
 				29C2B4DB1C856987005378CD /* FUTURITY.jpg */,
 				F4DB293D1D760BD40052D6AC /* Bolts.framework */,
 				F4DB293B1D7608CC0052D6AC /* FBSDKCoreKit.framework */,

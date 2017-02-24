@@ -104,6 +104,7 @@
                         <outlet property="emailTextField" destination="caa-iS-fbL" id="K3H-Zg-ooy"/>
                         <outlet property="passwordTextField" destination="1KJ-0e-QLt" id="MNt-e5-LLK"/>
                         <segue destination="2ZL-ss-b4r" kind="presentation" identifier="login_success" id="9vc-bA-r6g"/>
+                        <segue destination="2ZL-ss-b4r" kind="presentation" identifier="facebook_login" id="0xU-UJ-y4s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -274,7 +275,7 @@
         <!--New Camera View-->
         <scene sceneID="L2T-or-0ad">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="WUK-Ki-iks" customClass="NewCameraView" sceneMemberID="viewController">
+                <viewController providesPresentationContextTransitionStyle="YES" modalPresentationStyle="overCurrentContext" id="WUK-Ki-iks" customClass="NewCameraView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kp7-qc-AkZ"/>
                         <viewControllerLayoutGuide type="bottom" id="f4G-1c-yir"/>
@@ -400,9 +401,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SZz-y8-1LN">
-                                <rect key="frame" x="20" y="56" width="280" height="262"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BH0-hd-Msp">
                                 <rect key="frame" x="20" y="341" width="280" height="59"/>
                                 <color key="backgroundColor" red="0.09803922474" green="0.68235296010000002" blue="0.94901967050000002" alpha="1" colorSpace="deviceRGB"/>
@@ -432,6 +430,9 @@
                                     <action selector="backButtonClicked:" destination="THg-J5-2K5" eventType="touchUpInside" id="xdB-dJ-enh"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SZz-y8-1LN">
+                                <rect key="frame" x="20" y="12" width="280" height="176"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -442,7 +443,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lc3-WA-OMy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2289" y="-919"/>
+            <point key="canvasLocation" x="1455" y="-913"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NIu-Jz-byJ">
@@ -464,7 +465,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="co4-Ji-wi1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="420" y="-257"/>
+            <point key="canvasLocation" x="420" y="-247"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="zqo-UG-V4q">

@@ -12,6 +12,8 @@
 #import <AWSS3/AWSS3.h>
 #import <AWSCore/AWSCore.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
 
 @interface CameraView () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
@@ -23,7 +25,13 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+    FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
+    content.contentURL = [NSURL
+                          URLWithString:@"https://www.facebook.com/FacebookDevelopers"];
+    FBSDKShareButton *shareButton = [[FBSDKShareButton alloc] init];
+    shareButton.shareContent = content;
+    shareButton.center = self.view.center;
+    [self.view addSubview:shareButton];
 
     }
 
