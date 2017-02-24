@@ -56,7 +56,7 @@
    
        if ([FBSDKAccessToken currentAccessToken]) {
         // User is logged in, do work such as go to next view controller.
-        [self performSegueWithIdentifier:@"login_success" sender    :self];
+        [self performSegueWithIdentifier:@"facebook_login" sender:self];
         
     }
     
@@ -64,8 +64,55 @@
      startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
          
          if (!error) {
-             NSLog(@"fetched user:%@  and Email : %@", result,result[@"email"]);
+             NSLog(@"fetched user:%@  and name : %@  and ID : %@", result,result[@"name"],result[@"id"]);
+             
+             AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+             
+             AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+             policy.allowInvalidCertificates = YES;
+             manager.securityPolicy = policy;
+             
+             manager.requestSerializer = [AFJSONRequestSerializer serializer];
+             
+             [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+             
+             NSString *facebook_email;
+             if (!result[@"email"]){
+               facebook_email = result[@"name"];
+                 [[NSUserDefaults standardUserDefaults] setObject:result[@"name"] forKey:@"userId"];
+                 [[NSUserDefaults standardUserDefaults] synchronize];
+                 
+             } else {
+               facebook_email = result[@"email"];
+                 [[NSUserDefaults standardUserDefaults] setObject:result[@"email"] forKey:@"userId"];
+                 [[NSUserDefaults standardUserDefaults] synchronize];
+
+             }
+             NSString *facebook_id = result[@"id"];
+             
+             NSDictionary *params = [[NSMutableDictionary alloc] init];
+             params = @{@"book": @{@"email":facebook_email, @"id":facebook_id}};
+
+             
+             [manager POST:@"https://true-growth-api.herokuapp.com/api/books/show" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+                 
+                 if ( responseObject[@"errors"] == NULL){
+                     NSLog(@"%@", responseObject);
+                 }else{
+                     
+                 }
+             }failure:^(NSURLSessionTask *operation, NSError *error) {
+                 
+                 NSLog(@"error = %@", error);
+                 
+             }];
+
+            
+
+
+             
          }
+              
      }];
 }
 

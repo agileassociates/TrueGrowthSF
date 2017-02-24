@@ -12,6 +12,8 @@
 #import <AWSS3/AWSS3TransferManager.h>
 #import <AWSS3/AWSS3.h>
 #import <AWSCore/AWSCore.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
 
 
@@ -28,6 +30,16 @@
     self.uploadButton.alpha = 0.5;
     self.threadProgressView.hidden = YES;
     self.threadProgressView.progress = 0.0;
+    
+    
+    
+
+        
+    
+    
+
+    //
+    
     //[self performSelectorOnMainThread:@selector(makeMyProgressBarMoving) withObject:nil waitUntilDone:NO];
 
     // Do any additional setup after loading the view, typically from a nib.
@@ -83,6 +95,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     // Put that image onto the screen in our image view
     self.pictureView.image = image;
     
+    
     // Take image picker off the screen -
     // you must call this dismiss method
     [self dismissViewControllerAnimated:YES completion:NULL];
@@ -119,6 +132,22 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init];
     [assetslibrary assetForURL:refURL resultBlock:resultblock failureBlock:nil];
     
+    FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc] init];
+    photo.image = self.pictureView.image;
+    //photo.userGenerated = YES;
+    FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc] init];
+    content.photos = @[photo];
+    
+    [FBSDKShareDialog showFromViewController:self
+                                 withContent:content
+                                    delegate:nil];
+    
+    FBSDKShareButton *button = [[FBSDKShareButton alloc] init];
+    button.shareContent = content;
+    button.frame = CGRectMake(70, 320, 178, 30);
+
+    //[self.view addSubview:button];
+
 
 }
 
